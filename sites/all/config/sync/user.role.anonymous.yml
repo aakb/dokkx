@@ -1,0 +1,13 @@
+uuid: 3c65e46f-c1e3-4107-8006-6ec3cb2a926f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access content'
+  - 'view the administration theme'

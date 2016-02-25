@@ -1,0 +1,24 @@
+uuid: 935add34-0fdc-40a7-9309-9a1e8f68b833
+langcode: en
+status: false
+dependencies:
+  module:
+    - user
+  theme:
+    - itkore
+_core:
+  default_config_hash: x16SpaqM4lHfKnzWLRhu9s-ByKOgPkjgmAExZ35eRaY
+id: itkore_login
+theme: itkore
+region: '-1'
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+  cache:
+    max_age: -1
+visibility: {  }
