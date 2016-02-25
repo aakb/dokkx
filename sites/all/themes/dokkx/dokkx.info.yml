@@ -4,7 +4,7 @@ description: 'The DokkX theme.'
 package: dokkx
 
 libraries:
-  - itkore/global-styling
+  - dokkx/global-styling
 
 stylesheets-remove:
   - normalize.css
