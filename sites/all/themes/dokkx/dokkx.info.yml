@@ -5,6 +5,7 @@ package: dokkx
 
 libraries:
   - dokkx/global-styling
+  - dokkx/global-js
 
 stylesheets-remove:
   - normalize.css
