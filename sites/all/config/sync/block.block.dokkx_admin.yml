@@ -1,18 +1,18 @@
-uuid: 3f1a9fc5-6789-4eeb-a513-19b906da5fca
+uuid: bbd7b10d-ff1e-4f59-b700-c53e54f2a0c1
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - system.menu.admin
   module:
     - system
   theme:
-    - itkore
+    - dokkx
 _core:
   default_config_hash: PaKxrAzSL5rUIaWdODCTcWMET_3BG0cmHOHkpPwpN_k
-id: itkore_admin
-theme: itkore
-region: '-1'
+id: dokkx_admin
+theme: dokkx
+region: hamburger
 weight: 1
 provider: null
 plugin: 'system_menu_block:admin'

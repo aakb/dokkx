@@ -1,18 +1,18 @@
-uuid: b65d2967-a0bd-4f26-bc0f-158f967e4a50
+uuid: 053d0c5a-d29c-4815-b100-dd8cb06bc033
 langcode: en
-status: false
+status: true
 dependencies:
   config:
     - system.menu.tools
   module:
     - system
   theme:
-    - itkore
+    - dokkx
 _core:
   default_config_hash: djkzb6uOQjWzfymBXDbUR91sLc8KB2iQ6rpl6q0YEE0
-id: itkore_tools
-theme: itkore
-region: '-1'
+id: dokkx_tools
+theme: dokkx
+region: hamburger
 weight: 0
 provider: null
 plugin: 'system_menu_block:tools'

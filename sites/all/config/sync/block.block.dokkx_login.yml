@@ -1,16 +1,16 @@
-uuid: 935add34-0fdc-40a7-9309-9a1e8f68b833
+uuid: 94eb52fb-bc92-42cb-a702-02e7c5b5e4c3
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - user
   theme:
-    - itkore
+    - dokkx
 _core:
   default_config_hash: x16SpaqM4lHfKnzWLRhu9s-ByKOgPkjgmAExZ35eRaY
-id: itkore_login
-theme: itkore
-region: '-1'
+id: dokkx_login
+theme: dokkx
+region: hamburger
 weight: 0
 provider: null
 plugin: user_login_block

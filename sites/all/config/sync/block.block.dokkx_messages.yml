@@ -1,16 +1,16 @@
-uuid: 2a1c774f-57e3-4887-a000-b3027f480f2d
+uuid: b8719ca9-9cf4-4a40-8903-037fab5f754d
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - system
   theme:
-    - itkore
+    - dokkx
 _core:
   default_config_hash: WSO00_Vcbo3cewLvxL1RfThdBSf8rkNNJdR_ps_G2h0
-id: itkore_messages
-theme: itkore
-region: '-1'
+id: dokkx_messages
+theme: dokkx
+region: hamburger
 weight: 0
 provider: null
 plugin: system_messages_block
