@@ -1,4 +1,4 @@
-uuid: 67ede90d-098f-4153-995d-935958265dbb
+uuid: 1a4dc858-3ded-4799-815d-935d14506627
 langcode: en
 status: true
 dependencies:
@@ -8,10 +8,10 @@ dependencies:
     - system
   theme:
     - dokkx
-id: mainnavigation
+id: mainnavigation_2
 theme: dokkx
-region: hamburger
-weight: -4
+region: nav_menu
+weight: -3
 provider: null
 plugin: 'system_menu_block:main'
 settings:
