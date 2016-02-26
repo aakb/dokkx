@@ -1,0 +1,15 @@
+<?php
+
+/**
+* Enable devel generate and toolbar visibility modules.
+*/
+function dokkx_setup_update_8001() {
+  // Enable modules.
+  $module_list = array(
+    'toolbar_visibility',
+    'devel_generate',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
+
+

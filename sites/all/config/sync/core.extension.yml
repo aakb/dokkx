@@ -8,6 +8,7 @@ module:
   ctools: 0
   datetime: 0
   dblog: 0
+  devel_generate: 0
   dokkx_setup: 0
   dynamic_page_cache: 0
   editor: 0
@@ -45,6 +46,7 @@ module:
   text: 0
   token: 0
   toolbar: 0
+  toolbar_visibility: 0
   update: 0
   user: 0
   views: 0
