@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.event.body
     - field.field.node.event.field_endtime
     - field.field.node.event.field_instagram
+    - field.field.node.event.field_lead
     - field.field.node.event.field_location
     - field.field.node.event.field_main_image
     - field.field.node.event.field_pages
@@ -38,7 +39,7 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
   field_endtime:
@@ -51,6 +52,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: field_instagram_hashtag_default_widget
+  field_lead:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_location:
     weight: 9
     settings:
@@ -99,25 +107,25 @@ content:
     type: datetime_default
   langcode:
     type: language_select
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 16
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 5
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 5
+    weight: 6
     third_party_settings: {  }
   title:
     type: string_textfield
@@ -128,7 +136,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60

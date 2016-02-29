@@ -5,10 +5,12 @@ dependencies:
   config:
     - field.field.node.news.body
     - field.field.node.news.field_instagram
+    - field.field.node.news.field_lead
     - field.field.node.news.field_main_image
     - field.field.node.news.field_pages
     - field.field.node.news.field_related_page_image
     - field.field.node.news.field_related_page_teaser
+    - image.style.main_image
     - node.type.news
   module:
     - image
@@ -25,17 +27,24 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
   field_instagram:
-    weight: 3
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: field_instagram_hashtag_default_formatter
-  field_main_image:
+  field_lead:
     weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_main_image:
+    weight: 1
     label: hidden
     settings:
       image_style: main_image
@@ -44,7 +53,7 @@ content:
     type: image
   field_pages:
     type: entity_reference_entity_view
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       view_mode: teaser
