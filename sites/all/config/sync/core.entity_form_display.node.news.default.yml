@@ -13,11 +13,55 @@ dependencies:
     - image.style.thumbnail
     - node.type.news
   module:
+    - field_group
     - image
     - imce
     - itk_instagram_hashtag
     - path
     - text
+third_party_settings:
+  field_group:
+    group_related_page:
+      children:
+        - field_related_page_teaser
+        - field_related_page_image
+      parent_name: ''
+      weight: 10
+      label: 'Teaser display for this news'
+      format_type: fieldset
+      format_settings:
+        label: 'Teaser display for this news'
+        required_fields: true
+        id: ''
+        classes: ''
+    group_instagram:
+      children:
+        - field_instagram
+      parent_name: ''
+      weight: 13
+      label: 'Instagram feed'
+      format_type: tab
+      format_settings:
+        label: 'Instagram feed'
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
+    group_related_pages:
+      children:
+        - field_pages
+      parent_name: ''
+      weight: 11
+      label: 'Other content related to this news'
+      format_type: tab
+      format_settings:
+        label: 'Other content related to this news'
+        formatter: closed
+        description: ''
+        required_fields: true
+        id: ''
+        classes: ''
 _core:
   default_config_hash: XEOC1h19z2pcNbcc7g62Oh4lQpmpKDzO83ikpLrmbZU
 id: node.news.default
@@ -68,7 +112,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_related_page_image:
-    weight: 11
+    weight: 12
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -77,7 +121,7 @@ content:
         enabled: 1
     type: image_image
   field_related_page_teaser:
-    weight: 10
+    weight: 11
     settings:
       size: 60
       placeholder: ''

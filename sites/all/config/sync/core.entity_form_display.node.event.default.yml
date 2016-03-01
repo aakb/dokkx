@@ -17,11 +17,53 @@ dependencies:
     - node.type.event
   module:
     - datetime
+    - field_group
     - image
     - imce
     - itk_instagram_hashtag
     - path
     - text
+third_party_settings:
+  field_group:
+    group_related_page:
+      children:
+        - field_related_page_teaser
+        - field_related_page_image
+      parent_name: ''
+      weight: 12
+      label: 'Teaser display for this event'
+      format_type: fieldset
+      format_settings:
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_instagram:
+      children:
+        - field_instagram
+      parent_name: ''
+      weight: 14
+      label: 'Instagram feed'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
+    group_related_pages:
+      children:
+        - field_pages
+      parent_name: ''
+      weight: 13
+      label: 'Other content related to this event'
+      format_type: tab
+      format_settings:
+        formatter: closed
+        description: ''
+        classes: ''
+        id: ''
+        required_fields: true
 _core:
   default_config_hash: _TmvxP1xMnvsspfpVPNHBOLM1bBn-d-YdTBhnsWMukI
 id: node.event.default
@@ -77,7 +119,7 @@ content:
         enabled: 1
     type: image_image
   field_pages:
-    weight: 14
+    weight: 17
     settings:
       match_operator: CONTAINS
       size: 60
@@ -85,7 +127,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_related_page_image:
-    weight: 13
+    weight: 15
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -94,7 +136,7 @@ content:
         enabled: 1
     type: image_image
   field_related_page_teaser:
-    weight: 12
+    weight: 14
     settings:
       size: 60
       placeholder: ''
