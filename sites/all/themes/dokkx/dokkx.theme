@@ -72,7 +72,6 @@ function dokkx_preprocess_menu(&$variables) {
       $variables['hamburger_menu'] = TRUE;
     }
   }
-  $a = 1;
 }
 
 
