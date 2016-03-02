@@ -68,5 +68,7 @@
  */
 #}
 {{ content.field_main_image }}
+<div class="content--inner">
 <h1 class="content--header">{{ label }}</h1>
 {{ content|without('field_main_image', 'comment', 'links') }}
+</div>

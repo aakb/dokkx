@@ -1,0 +1,6 @@
+itk_instagram_hashtag:
+  client_id: '123'
+  resolution: low_resolution
+  sort_by: most-recent
+  limit: '6'
+  enable_caption: 0

@@ -63,7 +63,7 @@
  */
 #}
 <div class="overlay js-menu-toggle"></div>
-<a href="/" class="logo js-logo" title="dokkx"><figure>{% include '@dokkx/../images/assets/logo.svg' %}</figure></a>
+<a href="/" class="logo js-logo" title="DokkX"><figure>{% include '@dokkx/../images/assets/logo.svg' %}</figure></a>
 <nav class="nav js-nav">
   <div class="nav--links">
     {{ page.nav_menu }}
@@ -105,7 +105,9 @@
 </div>
 
 <main role="main" class="content">
-  {{ page.content }}
+  <div class="content--inner">
+    {{ page.content }}
+  </div>
 </main>
 
 {% include '@dokkx/layout/_footer.html.twig' %}
