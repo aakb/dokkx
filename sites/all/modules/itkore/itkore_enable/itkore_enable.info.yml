@@ -38,14 +38,12 @@ dependencies:
   - imce
   - ctools
   - pathauto
-  - pathauto_menu_link_parents_hack
   - redirect
   - token
   - toolbar_visibility
 
 #ITKore modules
   - itkore_base
-  #- itkore_content_types
   - itkore_fields
   - itkore_language
   - itkore_text_filters
