@@ -21,7 +21,6 @@ module:
   filter: 0
   image: 0
   imce: 0
-  itk_cookie_message: 0
   itk_instagram_hashtag: 0
   itkore_base: 0
   itkore_blocks: 0
@@ -40,7 +39,6 @@ module:
   page_cache: 0
   path: 0
   pathauto: 0
-  quickedit: 0
   redirect: 0
   system: 0
   taxonomy: 0
