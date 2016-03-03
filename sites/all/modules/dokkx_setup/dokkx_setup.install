@@ -12,4 +12,15 @@ function dokkx_setup_update_8001() {
   \Drupal::service('module_installer')->install($module_list);
 }
 
+/**
+ * Enable frontpage instagram module.
+ */
+function dokkx_setup_update_8002() {
+  // Enable modules.
+  $module_list = array(
+    'itkore_frontpage_hashtag'
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
+
 
