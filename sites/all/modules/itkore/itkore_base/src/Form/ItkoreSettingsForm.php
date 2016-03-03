@@ -54,6 +54,7 @@ class ItkoreSettingsForm extends FormBase {
       '#type' => 'textfield',
       '#default_value' => $config->get('itkore_frontpage.frontpage_title'),
       '#weight' => '1',
+      '#maxlength' => 256,
     );
 
     $form['frontpage_wrapper']['frontpage_lead'] = array(
@@ -61,6 +62,7 @@ class ItkoreSettingsForm extends FormBase {
       '#type' => 'textfield',
       '#default_value' => $config->get('itkore_frontpage.frontpage_lead'),
       '#weight' => '2',
+      '#maxlength' => 256,
     );
 
     $form['frontpage_wrapper']['frontpage_sub'] = array(
@@ -68,6 +70,7 @@ class ItkoreSettingsForm extends FormBase {
       '#type' => 'textfield',
       '#default_value' => $config->get('itkore_frontpage.frontpage_sub'),
       '#weight' => '3',
+      '#maxlength' => 256,
     );
 
     $form['frontpage_wrapper']['frontpage_button'] = array(
