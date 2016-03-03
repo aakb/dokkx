@@ -27,6 +27,7 @@ function dokkx_preprocess_page (&$variables) {
     $variables['front_button_text'] = $config->get('itkore_frontpage.frontpage_button');
     $variables['front_button_link'] = $config->get('itkore_frontpage.frontpage_link');
     $variables['front_image'] = ($file) ? $file->url() : 'sites/all/themes/cfia/images/header-background.jpg';
+    $variables['front_hashtag'] = $config->get('itkore_frontpage.frontpage_hashtag');
   }
 
   // Footer variables for page template.
@@ -90,5 +91,4 @@ function dokkx_preprocess_node_event(&$variables) {
   $variables['eventdate'] = \Drupal::service('date.formatter')->format(date('U', $startDateTime->getTimestamp()), 'custom', 'l j. F Y');
   $variables['eventstarttime'] = \Drupal::service('date.formatter')->format(date('U', $startDateTime->getTimestamp()), 'custom', 'G:i');
   $variables['eventendtime'] = \Drupal::service('date.formatter')->format(date('U', $endDateTime->getTimestamp()), 'custom', 'G:i');
-
 }
