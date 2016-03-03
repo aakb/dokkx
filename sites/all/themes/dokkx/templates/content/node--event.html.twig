@@ -68,6 +68,8 @@
  */
 #}
 {{ content.field_main_image }}
-<h1 class="content--header">{{ label }}</h1>
-<p class="content--meta">{{ eventdate }}, {{ eventstarttime }} - {{ eventendtime }} - {{ content.field_location }}</p>
-{{ content|without('field_main_image', 'field_starttime', 'field_endtime', 'field_location', 'comment', 'links') }}
+<div class="content--inner">
+  <h1 class="content--header">{{ label }}</h1>
+  <p class="content--meta">{{ eventdate }}, {{ eventstarttime }} - {{ eventendtime }} - {{ content.field_location }}</p>
+  {{ content|without('field_main_image', 'field_starttime', 'field_endtime', 'field_location', 'comment', 'links') }}
+</div>
