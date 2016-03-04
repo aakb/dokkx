@@ -23,8 +23,6 @@ targetEntityType: node
 bundle: news
 mode: news_teaser
 content:
-<<<<<<< HEAD
-=======
   field_related_page_image:
     type: image
     weight: 1
@@ -33,7 +31,6 @@ content:
       image_style: news_teaser_image
       image_link: content
     third_party_settings: {  }
->>>>>>> 1f1e4d49c70fb41879b17d7dbadea4649dc82888
   field_related_page_teaser:
     type: string
     weight: 2
