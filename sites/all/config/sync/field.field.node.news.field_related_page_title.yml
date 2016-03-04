@@ -9,7 +9,7 @@ id: node.news.field_related_page_title
 field_name: field_related_page_title
 entity_type: node
 bundle: news
-label: 'Related page title'
+label: 'Related Page Title'
 description: 'Overrides main title'
 required: false
 translatable: false
