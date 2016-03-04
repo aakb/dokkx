@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_main_image
     - field.storage.node.field_related_page_teaser
+    - field.storage.node.field_related_page_title
     - node.type.news
   module:
     - image
@@ -354,6 +355,69 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
+        field_related_page_title:
+          id: field_related_page_title
+          table: node__field_related_page_title
+          field: field_related_page_title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         field_main_image:
           id: field_main_image
           table: node__field_main_image
@@ -492,7 +556,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<article class=\"itk-boxlist-news--item\">\n  <header>\n    <h2 class=\"itk-boxlist-news--header\"><a href=\"{{ path }}\">{{ title }}</a></h2>\n    <p>{{ field_related_page_teaser }}</p>\n    <a href=\"{{ path }}\">{% trans %}Read news{% endtrans %}</a>\n  </header>\n  <figure>{{ field_main_image }}</figure>\n</article>\n"
+            text: "<article class=\"itk-boxlist--item\">\n  <header>\n{% if field_related_page_title %}\n    <h2 class=\"itk-boxlist--header\"><a href=\"{{ path }}\">{{ field_related_page_title }}</a></h2>\n{% else %}\n    <h2 class=\"itk-boxlist--header\"><a href=\"{{ path }}\">{{ title }}</a></h2>\n{% endif %}\n<div class=\"itk-boxlist--meta\">\n       {{ created }}\n    </div>\n    <p>{{ field_related_page_teaser }}</p>\n    <a href=\"{{ path }}\">{{ title }}</a>\n  </header>\n  <figure>{{ field_main_image }}</figure>\n</article>\n"
             make_link: false
             path: ''
             absolute: false
@@ -532,8 +596,8 @@ display:
           plugin_id: custom
       arguments: {  }
       display_extenders: {  }
-      css_class: itk-boxlist-news
-      use_more: true
+      css_class: itk-boxlist
+      use_more: false
       use_more_always: true
       use_more_text: 'All news'
       link_url: ''
@@ -553,6 +617,7 @@ display:
       tags:
         - 'config:field.storage.node.field_main_image'
         - 'config:field.storage.node.field_related_page_teaser'
+        - 'config:field.storage.node.field_related_page_title'
   block_1:
     display_plugin: block
     id: block_1
@@ -572,6 +637,7 @@ display:
       tags:
         - 'config:field.storage.node.field_main_image'
         - 'config:field.storage.node.field_related_page_teaser'
+        - 'config:field.storage.node.field_related_page_title'
   page_1:
     display_plugin: page
     id: page_1
@@ -631,3 +697,4 @@ display:
       tags:
         - 'config:field.storage.node.field_main_image'
         - 'config:field.storage.node.field_related_page_teaser'
+        - 'config:field.storage.node.field_related_page_title'

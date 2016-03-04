@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.overview_page.field_pages
     - field.field.node.overview_page.field_related_page_image
     - field.field.node.overview_page.field_related_page_teaser
+    - field.field.node.overview_page.field_related_page_title
     - image.style.thumbnail
     - node.type.overview_page
   module:
@@ -23,13 +24,15 @@ third_party_settings:
   field_group:
     group_related_page:
       children:
+        - field_related_page_title
         - field_related_page_teaser
         - field_related_page_image
       parent_name: ''
       weight: 10
       label: 'Teaser display for this page'
-      format_type: fieldset
+      format_type: tab
       format_settings:
+        formatter: closed
         description: ''
         classes: ''
         id: ''
@@ -39,14 +42,15 @@ third_party_settings:
         - field_pages
       parent_name: ''
       weight: 13
-      label: 'Other content related to this news'
+      label: 'Related content'
       format_type: tab
       format_settings:
+        label: 'Related content'
         formatter: closed
         description: ''
-        classes: ''
-        id: ''
         required_fields: true
+        id: ''
+        classes: ''
     group_instagram:
       children:
         - field_instagram
@@ -110,7 +114,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_related_page_image:
-    weight: 12
+    weight: 28
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -119,7 +123,14 @@ content:
         enabled: 1
     type: image_image
   field_related_page_teaser:
-    weight: 11
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_related_page_title:
+    weight: 26
     settings:
       size: 60
       placeholder: ''

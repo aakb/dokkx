@@ -11,6 +11,11 @@ dependencies:
     - field.field.node.news.field_pages
     - field.field.node.news.field_related_page_image
     - field.field.node.news.field_related_page_teaser
+<<<<<<< HEAD
+=======
+    - field.field.node.news.field_related_page_title
+    - image.style.news_teaser_image
+>>>>>>> 1f1e4d49c70fb41879b17d7dbadea4649dc82888
     - node.type.news
   module:
     - user
@@ -21,9 +26,27 @@ targetEntityType: node
 bundle: news
 mode: news_teaser
 content:
+<<<<<<< HEAD
+=======
+  field_related_page_image:
+    type: image
+    weight: 1
+    label: hidden
+    settings:
+      image_style: news_teaser_image
+      image_link: content
+    third_party_settings: {  }
+>>>>>>> 1f1e4d49c70fb41879b17d7dbadea4649dc82888
   field_related_page_teaser:
     type: string
-    weight: 1
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_related_page_title:
+    type: string
+    weight: 0
     label: hidden
     settings:
       link_to_entity: false
