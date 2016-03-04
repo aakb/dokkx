@@ -13,12 +13,11 @@ dependencies:
     - field.field.node.event.field_related_page_image
     - field.field.node.event.field_related_page_teaser
     - field.field.node.event.field_starttime
-    - image.style.main_image
     - node.type.event
   module:
     - datetime
-    - image
     - itk_instagram_hashtag
+    - responsive_image
     - text
     - user
 _core:
@@ -66,10 +65,10 @@ content:
     weight: 1
     label: hidden
     settings:
-      image_style: main_image
+      responsive_image_style: dokkx_content_main_image
       image_link: ''
     third_party_settings: {  }
-    type: image
+    type: responsive_image
   field_pages:
     weight: 6
     label: hidden
