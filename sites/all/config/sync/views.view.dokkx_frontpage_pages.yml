@@ -1,6 +1,6 @@
 uuid: e2635fa9-5ad5-41d0-8506-6dbf69d78d75
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - field.storage.node.field_main_image

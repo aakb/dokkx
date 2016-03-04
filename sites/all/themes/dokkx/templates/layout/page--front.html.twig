@@ -106,18 +106,19 @@
 
 <main role="main" class="content">
   <div class="content--inner">
-    {{ page.content }}
-    {% if front_hashtag %}
-      <section class="instagram-gallery">
-        <header>
-          <h3 class="instagram-gallery--title">
-            <a href="https://instagram.com/explore/tags/{{ front_hashtag }}">#{{ front_hashtag }}</a>
-          </h3>
-        </header>
-        <div class="instagram-gallery--wrapper" id="instafeed--{{ front_hashtag }}"></div>
-      </section>
-    {% endif %}
-  </div>
+    {{ title }}
+  {{ page.content }}
+  {% if front_hashtag %}
+  <section class="instagram-gallery">
+    <header>
+      <h3 class="instagram-gallery--title">
+        <a href="https://instagram.com/explore/tags/{{ front_hashtag }}">#{{ front_hashtag }}</a>
+      </h3>
+    </header>
+    <div class="instagram-gallery--wrapper" id="instafeed--{{ front_hashtag }}"></div>
+  </section>
+  {% endif %}
+</div>
 </main>
 
 
