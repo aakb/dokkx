@@ -11,11 +11,8 @@ dependencies:
     - field.field.node.news.field_pages
     - field.field.node.news.field_related_page_image
     - field.field.node.news.field_related_page_teaser
-<<<<<<< HEAD
-=======
     - field.field.node.news.field_related_page_title
-    - image.style.news_teaser_image
->>>>>>> 1f1e4d49c70fb41879b17d7dbadea4649dc82888
+    - responsive_image.styles.dokkx_content_main_image
     - node.type.news
   module:
     - user
