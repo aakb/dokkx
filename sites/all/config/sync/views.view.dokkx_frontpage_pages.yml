@@ -1,19 +1,20 @@
-uuid: d83b64e2-ccf2-4165-ad05-5a61e680dc07
+uuid: e2635fa9-5ad5-41d0-8506-6dbf69d78d75
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_main_image
     - field.storage.node.field_related_page_teaser
-    - node.type.news
+    - node.type.page
+    - system.menu.main
   module:
     - image
     - node
     - user
 _core:
-  default_config_hash: xN4jCqVMkngliYqSnSe0_2NptvIZiPBvTzVKp5gMFU4
-id: dokkx_frontpage_news
-label: 'Dokkx Frontpage news'
+  default_config_hash: WEqsGejwgun7Xl-YsWd4wtB7aaG50Zw38b7Rjb0oum0
+id: dokkx_frontpage_pages
+label: 'Dokkx Frontpage Pages'
 module: node
 description: 'All content promoted to the front page.'
 tag: default
@@ -51,7 +52,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            news: news
+            page: page
           group: 1
           exposed: false
           expose:
@@ -123,7 +124,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 1
+          items_per_page: 2
           offset: 0
       query:
         type: views_query
@@ -159,85 +160,27 @@ display:
       style:
         type: default
         options:
-          grouping:
-            -
-              field: created_1
-              rendered: true
-              rendered_strip: true
+          grouping: {  }
           row_class: ''
           default_row_class: false
-      title: 'Seneste nyt fra DokkX'
-      header: {  }
-      footer: {  }
-      relationships: {  }
-      fields:
-        created:
-          id: created
-          table: node_field_data
-          field: created
+      title: 'Oplevelser på DokkX'
+      header:
+        area:
+          id: area
+          table: views
+          field: area
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: timestamp
-          settings:
-            date_format: custom
-            custom_date_format: 'j. M Y'
-            timezone: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: node
-          entity_field: created
-          plugin_id: field
+          empty: false
+          tokenize: false
+          content:
+            value: '<h1 class="content--header">Events</h1>'
+            format: filtered_html
+          plugin_id: text
+      footer: {  }
+      relationships: {  }
+      fields:
         path:
           id: path
           table: node
@@ -354,6 +297,69 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: field
+        field_related_page_teaser:
+          id: field_related_page_teaser
+          table: node__field_related_page_teaser
+          field: field_related_page_teaser
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         field_main_image:
           id: field_main_image
           table: node__field_main_image
@@ -418,69 +424,6 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        field_related_page_teaser:
-          id: field_related_page_teaser
-          table: node__field_related_page_teaser
-          field: field_related_page_teaser
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
         nothing:
           id: nothing
           table: views
@@ -492,7 +435,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<article class=\"itk-boxlist-news--item\">\n  <header>\n    <h2 class=\"itk-boxlist-news--header\"><a href=\"{{ path }}\">{{ title }}</a></h2>\n<div class=\"itk-boxlist-news--meta\">\n      <p class=\"itk-boxlist-news--meta-wrapper\">\n        <span class=\"itk-boxlist-news--icon\"><img src=\"includes/icons/calendar.svg\"></span>\n       {{ created }}\n      </p>\n    </div>\n    <p>{{ field_related_page_teaser }}</p>\n    <a href=\"{{ path }}\">{% trans %}Read news{% endtrans %}</a>\n  </header>\n  <figure>{{ field_main_image }}</figure>\n</article>\n"
+            text: "<article class=\"itk-boxlist--item\">\n  <header>\n    <h2 class=\"itk-boxlist--header\"><a href=\"{{ path }}\">{{ title }}</a></h2>\n    <p>{{ field_related_page_teaser }}</p>\n    <a href=\"{{ path }}\">{{ title }}</a>\n  </header>\n   <figure>{{ field_main_image }}</figure>\n</article>"
             make_link: false
             path: ''
             absolute: false
@@ -532,12 +475,13 @@ display:
           plugin_id: custom
       arguments: {  }
       display_extenders: {  }
-      css_class: itk-boxlist-news
+      css_class: itk-boxlist
       use_more: false
       use_more_always: true
       use_more_text: 'All news'
       link_url: ''
       link_display: page_1
+      show_admin_links: true
     display_plugin: default
     display_title: Master
     id: default
@@ -560,6 +504,9 @@ display:
     position: 3
     display_options:
       display_extenders: {  }
+      header: {  }
+      defaults:
+        header: false
       block_hide_empty: true
     cache_metadata:
       contexts:
@@ -579,7 +526,7 @@ display:
     position: 3
     display_options:
       display_extenders: {  }
-      path: nyheder
+      path: begivenheder
       use_more: false
       defaults:
         use_more: false
@@ -607,6 +554,14 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
+      menu:
+        type: normal
+        title: Begivenheder
+        description: ''
+        parent: ''
+        weight: -50
+        context: '0'
+        menu_name: main
       header:
         area_text_custom:
           id: area_text_custom
@@ -617,7 +572,7 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: '<h1 class="content--header">Seneste nyt fra DokkX</h1>'
+          content: '<h1 class="content--header">Begivenheder</h1>'
           plugin_id: text_custom
     cache_metadata:
       contexts:

@@ -1,18 +1,15 @@
 uuid: 3ca2b0d8-6737-4255-883b-590f8e42b513
 langcode: en
-status: true
+status: false
 dependencies:
-  config:
-    - views.view.dokkx_frontpage_events
   module:
     - system
-    - views
   theme:
     - dokkx
 id: views_block__dokkx_frontpage_events_block_1
 theme: dokkx
-region: content
-weight: 0
+region: '-1'
+weight: -2
 provider: null
 plugin: 'views_block:dokkx_frontpage_events-block_1'
 settings:

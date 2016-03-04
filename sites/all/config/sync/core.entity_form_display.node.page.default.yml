@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.page.field_pages
     - field.field.node.page.field_related_page_image
     - field.field.node.page.field_related_page_teaser
+    - field.field.node.page.field_related_page_title
     - image.style.thumbnail
     - node.type.page
   module:
@@ -26,23 +27,26 @@ third_party_settings:
         - field_pages
       parent_name: ''
       weight: 11
-      label: 'Other content related to this page'
+      label: 'Related content'
       format_type: tab
       format_settings:
+        label: 'Related content'
         formatter: closed
         description: ''
-        classes: ''
-        id: ''
         required_fields: true
+        id: ''
+        classes: ''
     group_related_page:
       children:
+        - field_related_page_title
         - field_related_page_teaser
         - field_related_page_image
       parent_name: ''
       weight: 10
       label: 'Teaser display for this page'
-      format_type: fieldset
+      format_type: tab
       format_settings:
+        formatter: closed
         description: ''
         classes: ''
         id: ''
@@ -110,7 +114,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
   field_related_page_image:
-    weight: 13
+    weight: 28
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -119,7 +123,14 @@ content:
         enabled: true
     type: image_image
   field_related_page_teaser:
-    weight: 12
+    weight: 27
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_related_page_title:
+    weight: 26
     settings:
       size: 60
       placeholder: ''
