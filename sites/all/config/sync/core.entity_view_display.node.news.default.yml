@@ -11,11 +11,11 @@ dependencies:
     - field.field.node.news.field_related_page_image
     - field.field.node.news.field_related_page_teaser
     - field.field.node.news.field_related_page_title
-    - image.style.main_image
+    - responsive_image.styles.dokkx_content_main_image
     - node.type.news
   module:
-    - image
     - itk_instagram_hashtag
+    - responsive_image
     - text
     - user
 _core:
@@ -48,10 +48,10 @@ content:
     weight: 1
     label: hidden
     settings:
-      image_style: main_image
+      responsive_image_style: dokkx_content_main_image
       image_link: ''
     third_party_settings: {  }
-    type: image
+    type: responsive_image
   field_pages:
     type: entity_reference_entity_view
     weight: 3

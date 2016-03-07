@@ -11,11 +11,11 @@ dependencies:
     - field.field.node.overview_page.field_related_page_image
     - field.field.node.overview_page.field_related_page_teaser
     - field.field.node.overview_page.field_related_page_title
-    - image.style.main_image
+    - responsive_image.styles.dokkx_content_main_image
     - node.type.overview_page
   module:
-    - image
     - itk_instagram_hashtag
+    - responsive_image
     - text
     - user
 _core:
@@ -48,10 +48,10 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: main_image
+      responsive_image_style: dokkx_content_main_image
       image_link: ''
     third_party_settings: {  }
-    type: image
+    type: responsive_image
   field_pages:
     weight: 3
     label: hidden
