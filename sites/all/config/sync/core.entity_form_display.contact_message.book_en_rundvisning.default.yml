@@ -1,0 +1,59 @@
+uuid: 3931476d-6546-4c11-8900-0e741183c7b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.book_en_rundvisning
+    - field.field.contact_message.book_en_rundvisning.field_antal_personer
+    - field.field.contact_message.book_en_rundvisning.field_institution_forening
+id: contact_message.book_en_rundvisning.default
+targetEntityType: contact_message
+bundle: book_en_rundvisning
+mode: default
+content:
+  copy:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+  field_antal_personer:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_institution_forening:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  langcode:
+    type: language_select
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+  mail:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+  message:
+    type: string_textarea
+    weight: 5
+    settings:
+      rows: 12
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  subject:
+    type: string_textfield
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

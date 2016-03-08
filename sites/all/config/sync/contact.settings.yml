@@ -1,4 +1,4 @@
-default_form: kontakt_dokkx
+default_form: book_en_rundvisning
 flood:
   limit: 5
   interval: 3600

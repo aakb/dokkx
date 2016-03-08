@@ -1,0 +1,10 @@
+uuid: ef360c91-37cc-4624-b900-f618391dabab
+langcode: en
+status: true
+dependencies: {  }
+id: book_en_rundvisning
+label: 'Book en rundvisning'
+recipients:
+  - jari@aarhus.dk
+reply: '[auto-reply]'
+weight: 0
