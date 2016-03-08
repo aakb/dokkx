@@ -2,7 +2,7 @@
   function initInstafeed(tag, id) {
     console.log(tag);
     console.log(id);
-    var clientId = '0';
+    var clientId = '6dd7e66940864efebcfe9a09a920ad8d';
     var enableCaption = false;
     var limit = 6;
     var resolution = 'low_resolution';
