@@ -673,18 +673,7 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-      header:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          tokenize: false
-          content: '<h1 class="content--header">Seneste nyt fra DokkX</h1>'
-          plugin_id: text_custom
+      header: {  }
     cache_metadata:
       contexts:
         - 'languages:language_content'

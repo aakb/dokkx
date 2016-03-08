@@ -89,26 +89,24 @@
 
 <main role="main" class="content">
   <figure class="content--image-wrapper">
-    <picture style="background-image: url({{ 'http://vahq.net/images/healthcare.jpg' }});
-      background-position: center top;
-      background-size: 100% auto;
-      display: block;
-      height: 100%;
-      width: 100%;">
-    </picture>
+    <img src="{{ contact_image }}">
   </figure>
   <div class="content--inner">
-    <h1 class="content--header">Book en rundvisning</h1>
-    <div class="content--lead">[mangler tekst]</div>
-    <div class="content--text"><p>[mangler tekst]</p></div>
 
+    <h1 class="content--header">{{ contact_title }}</h1>
+    <div class="content--lead">
+      <p>{{ contact_lead }}</p>
+    </div>
+    <div class="content--text">
+      <p>{{ contact_text }}</p>
+    </div>
 
     <fieldset>
       <legend>Book en rundvisning</legend>
       <p>[tekst mangler]</p>
   {{ page.content }}
 </fieldset>
-</div>
+  </div>
 </main>
 {% include '@dokkx/layout/_footer.html.twig' %}
 

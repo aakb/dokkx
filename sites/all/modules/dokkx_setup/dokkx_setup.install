@@ -23,8 +23,6 @@ function dokkx_setup_update_8002() {
   \Drupal::service('module_installer')->install($module_list);
 }
 
-
-
 /**
  * Enable Responsive image module.
  */
@@ -33,6 +31,18 @@ function dokkx_setup_update_8003() {
   $module_list = array(
     'responsive_image',
     'breakpoint'
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
+
+/**
+ * Enable configuration modules.
+ */
+function dokkx_setup_update_8004() {
+  // Enable modules.
+  $module_list = array(
+    'itkore_contact',
+    'itkore_views_settings'
   );
   \Drupal::service('module_installer')->install($module_list);
 }
