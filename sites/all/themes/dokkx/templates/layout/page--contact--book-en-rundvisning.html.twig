@@ -85,10 +85,21 @@
       </div>
     </div>
   </nav>
-</header> 
+</header>
 
 <main role="main" class="content">
+  <figure class="content--image-wrapper">
+    <picture style="background-image: url({{ 'http://vahq.net/images/healthcare.jpg' }});
+      background-position: center top;
+      background-size: 100% auto;
+      display: block;
+      height: 100%;
+      width: 100%;">
+    </picture>
+  </figure>
+  <div class="content--inner">
   {{ page.content }}
+</div>
 </main>
 {% include '@dokkx/layout/_footer.html.twig' %}
 

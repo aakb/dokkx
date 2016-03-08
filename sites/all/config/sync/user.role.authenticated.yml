@@ -11,3 +11,5 @@ is_admin: false
 permissions:
   - 'access content'
   - 'view the administration theme'
+  - 'access site-wide contact form'
+  - 'access user contact forms'
