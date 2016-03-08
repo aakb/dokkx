@@ -43,17 +43,11 @@ content:
     weight: 5
     settings:
       rows: 12
-      placeholder: ''
+      placeholder: 'Skriv evt. en besked'
     third_party_settings: {  }
   name:
     weight: 0
     settings: {  }
     third_party_settings: {  }
-  subject:
-    type: string_textfield
-    weight: 4
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  subject: true
