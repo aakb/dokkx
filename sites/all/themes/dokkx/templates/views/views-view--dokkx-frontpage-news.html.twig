@@ -33,19 +33,9 @@
  */
 #}
 
-<figure class="content--image-wrapper">
-  <picture style="background-image: url({{ 'http://vahq.net/images/healthcare.jpg' }});
-    background-position: center top;
-    background-size: 100% auto;
-    display: block;
-    height: 100%;
-    width: 100%;">
-  </picture>
-</figure>
-
 {%
   set classes = [
-    dom_id ? 'js-view-dom-id-' ~ dom_id, 'content--inner'
+    dom_id ? 'js-view-dom-id-' ~ dom_id
   ]
 %}
 <div{{ attributes.addClass(classes) }}>

@@ -14,7 +14,7 @@ use Drupal\file\Entity\File;
 /**
  * Class ContentEntityExampleSettingsForm.
  * @package Drupal\itkore_base\Form
- * @ingroup itkore_booking
+ * @ingroup itkore_base
  */
 class ItkoreSettingsForm extends FormBase {
 
@@ -207,16 +207,4 @@ class ItkoreSettingsForm extends FormBase {
       )
     );
   }
-}
-
-/**
- * Deletes a a file from file usage table.
- *
- * @param int $fid
- *   The file id of the file to delete.
- */
-function removeFile($fid) {
-  // Load and delete old file.
-  $file = File::load($fid);
-  \Drupal::service('file.usage')->delete($file, 'itkore_base', 'user', '1', '1');
 }
