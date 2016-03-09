@@ -66,10 +66,10 @@ class ItkoreContactSettingsForm extends FormBase {
 
     $form['contact_wrapper']['contact_text'] = array(
       '#title' => $this->t('Contact text'),
-      '#type' => 'textfield',
+      '#type' => 'text_format',
+      '#format' => 'filtered_html',
       '#default_value' => $config->get('itkore_contact.contact_text'),
       '#weight' => '3',
-      '#maxlength' => 256,
     );
 
     $fids = array();
@@ -142,7 +142,7 @@ class ItkoreContactSettingsForm extends FormBase {
     $this->getBaseConfig()->setMultiple(array(
       'itkore_contact.contact_title' => $form_state->getValue('contact_title'),
       'itkore_contact.contact_lead' => $form_state->getValue('contact_lead'),
-      'itkore_contact.contact_text' => $form_state->getValue('contact_text'),
+      'itkore_contact.contact_text' => $form_state->getValue('contact_text')['value'],
       'itkore_contact.contact_image' => $file ? $file->id() : NULL
       )
     );
