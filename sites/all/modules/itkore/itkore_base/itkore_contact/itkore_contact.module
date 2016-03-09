@@ -22,7 +22,7 @@ function itkore_contact_preprocess_page (&$variables) {
 
     $variables['contact_title'] = $config->get('itkore_contact.contact_title');
     $variables['contact_lead'] = $config->get('itkore_contact.contact_lead');
-    $variables['contact_text'] = $config->get('itkore_contact.contact_text');
+    $variables['contact_text'] = check_markup($config->get('itkore_contact.contact_text'), 'filtered_html');
     $variables['contact_image'] = ($file) ? $file->url() : FALSE;
   }
 }
