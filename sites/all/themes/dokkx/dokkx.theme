@@ -92,3 +92,42 @@ function dokkx_preprocess_node_event(&$variables) {
   $variables['eventstarttime'] = \Drupal::service('date.formatter')->format(date('U', $startDateTime->getTimestamp()), 'custom', 'G:i');
   $variables['eventendtime'] = \Drupal::service('date.formatter')->format(date('U', $endDateTime->getTimestamp()), 'custom', 'G:i');
 }
+
+/**
+ * Implements hook_form_contact_message_book_en_rundvisning_form_alter().
+ *
+ * Alter the contact form - This is the only way.
+ */
+
+function dokkx_form_contact_message_book_en_rundvisning_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id){
+
+  // Name
+  $form['name']['#attributes']['placeholder'][] = 'Skriv dit fulde navn';
+  $form['name']['#attributes']['class'][] = 'form-control';
+
+//Institution
+  $form['field_institution_forening']['widget'][0]['value']['#attributes']['class'][] = 'form-control';
+  $form['field_institution_forening']['widget'][0]['value']['#attributes']['placeholder'][] = $form['field_institution_forening']['widget'][0]['#description'];
+  $form['field_institution_forening']['widget'][0]['#title'] = '';
+  unset($form['field_institution_forening']['widget'][0]['value']['#description']);
+
+//antal personer
+  $form['field_antal_personer']['widget'][0]['value']['#attributes']['class'][] = 'form-control';
+  $form['field_antal_personer']['widget'][0]['value']['#attributes']['placeholder'][] = $form['field_antal_personer']['widget'][0]['#description'];
+  $form['field_antal_personer']['widget'][0]['#title'] = '';
+  unset($form['field_antal_personer']['widget'][0]['value']['#description']);
+
+
+  // Mail
+  $form['mail']['#attributes']['class'][] = 'form-control';
+  $form['mail']['#attributes']['placeholder'][] = 'Skriv e-mail adresse';
+
+  // Message
+  $form['message']['widget'][0]['value']['#attributes']['class'][] = 'form-control';
+  $form['message']['widget'][0]['#title'] = '';
+
+  // Submit
+  $form['actions']['submit']['#attributes']['class'][] = 'btn';
+  $form['actions']['submit']['#attributes']['class'][] = 'btn-success';
+
+}

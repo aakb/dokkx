@@ -92,6 +92,7 @@
     <img src="{{ contact_image }}">
   </figure>
   <div class="content--inner">
+
     <h1 class="content--header">{{ contact_title }}</h1>
     <div class="content--lead">
       <p>{{ contact_lead }}</p>
@@ -99,7 +100,12 @@
     <div class="content--text">
       <p>{{ contact_text }}</p>
     </div>
-    {{ page.content }}
+
+    <fieldset>
+      <legend>Book en rundvisning</legend>
+      <p>[tekst mangler]</p>
+  {{ page.content }}
+</fieldset>
   </div>
 </main>
 {% include '@dokkx/layout/_footer.html.twig' %}
