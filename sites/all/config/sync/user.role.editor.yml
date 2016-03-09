@@ -35,3 +35,4 @@ permissions:
   - 'access toolbar'
   - 'administer users'
   - 'access user profiles'
+  - 'access administration pages'
