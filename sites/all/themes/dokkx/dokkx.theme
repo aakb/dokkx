@@ -130,4 +130,5 @@ function dokkx_form_contact_message_book_en_rundvisning_form_alter(&$form, \Drup
   $form['actions']['submit']['#attributes']['class'][] = 'btn';
   $form['actions']['submit']['#attributes']['class'][] = 'btn-success';
 
+  unset($form['actions']['preview']);
 }
