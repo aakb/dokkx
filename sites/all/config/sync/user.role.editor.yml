@@ -26,7 +26,6 @@ permissions:
   14: 'edit any itkore_resource content'
   15: 'edit own itkore_resource content'
   16: 'access content overview'
-  18: 'bypass node access'
   19: 'access in-place editing'
   20: 'administer menu'
   21: 'access site reports'
