@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.overview_page.field_related_page_image
     - field.field.node.overview_page.field_related_page_teaser
     - field.field.node.overview_page.field_related_page_title
-    - responsive_image.styles.dokkx_content_main_image
     - node.type.overview_page
   module:
     - itk_instagram_hashtag
@@ -62,7 +61,7 @@ content:
     type: entity_reference_entity_view
   field_related_page_title:
     weight: 5
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

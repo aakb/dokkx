@@ -12,9 +12,10 @@ dependencies:
     - field.field.node.news.field_related_page_image
     - field.field.node.news.field_related_page_teaser
     - field.field.node.news.field_related_page_title
-    - responsive_image.styles.dokkx_content_main_image
+    - image.style.news_teaser_image
     - node.type.news
   module:
+    - image
     - user
 _core:
   default_config_hash: FxCvWNj-GySIJB4aL7_1f38Ch1Zj9omIh6En7IkfVjs
