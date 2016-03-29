@@ -47,4 +47,17 @@ function dokkx_setup_update_8004() {
   \Drupal::service('module_installer')->install($module_list);
 }
 
+/**
+ * Disable contact modules.
+ */
+function dokkx_setup_update_8005() {
+  // Enable modules.
+  $module_list = array(
+    'itkore_contact',
+    'contact'
+  );
+  \Drupal::service('module_installer')->uninstall($module_list);
+}
+
+
 
