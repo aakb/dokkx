@@ -107,7 +107,7 @@
     var Folder = path && imce.addFolder(path);
     if (!Folder) {
       for (path in conf.folders) {
-        if ((Folder = imce.getFolder(path))) {
+        if (Folder = imce.getFolder(path)) {
           break;
         }
       }
@@ -186,7 +186,7 @@
     imce.treeEl.appendChild(root.branchEl);
     // Create predefined folders.
     for (path in folders) {
-      if (folders.hasOwnProperty(path)) {
+      if (imce.owns(folders, path)) {
         imce.addFolder(path, folders[path]);
       }
     }
@@ -208,7 +208,7 @@
     var Folder;
     var parts = imce.splitPath(path);
     if (parts) {
-      if ((Folder = imce.getFolder(parts[0]))) {
+      if (Folder = imce.getFolder(parts[0])) {
         return Folder.getItem(parts[1]);
       }
     }
@@ -229,8 +229,8 @@
       return Folder;
     }
     // New. Append to the parent.
-    if ((parts = imce.splitPath(path))) {
-      if ((parent = imce.addFolder(parts[0]))) {
+    if (parts = imce.splitPath(path)) {
+      if (parent = imce.addFolder(parts[0])) {
         Folder = new imce.Folder(parts[1], conf);
         parent.appendItem(Folder);
         return Folder;
@@ -304,7 +304,7 @@
     var i;
     var arr = imce.getSelection();
     for (i in arr) {
-      if (arr.hasOwnProperty(i)) {
+      if (imce.owns(arr, i)) {
         arr[i].deselect();
       }
     }
@@ -369,14 +369,14 @@
     var handler;
     var urlField;
     var parentWin = window.opener || window.parent;
-    if ((imce.parentWin = parentWin)) {
+    if (imce.parentWin = parentWin) {
       // Check sendto handler
-      if ((handler = imce.resolveHandler(query.sendto, parentWin))) {
+      if (handler = imce.resolveHandler(query.sendto, parentWin)) {
         imce.sendtoHandler = handler;
       }
       // Check url field
-      else if ((urlField = query.urlField)) {
-        if ((urlField = parentWin.document.getElementById(urlField))) {
+      else if (urlField = query.urlField) {
+        if (urlField = parentWin.document.getElementById(urlField)) {
           imce.sendtoHandler = function (Item, win) {
             try {
               imce.parentWin.focus();
@@ -390,7 +390,7 @@
         }
       }
       // Check init handler
-      if ((handler = imce.resolveHandler(query.oninit, parentWin))) {
+      if (handler = imce.resolveHandler(query.oninit, parentWin)) {
         imce.bind('init', handler);
       }
       // Store sendto type
@@ -426,7 +426,7 @@
     if (handler) {
       items = items || imce.getSelection();
       prop = imce.sendtoType === 'image' ? 'width' : 'isFile';
-      if ((Item = imce.getFirstItem(items, prop))) {
+      if (Item = imce.getFirstItem(items, prop)) {
         return handler(Item, window);
       }
     }
@@ -444,11 +444,11 @@
     var disabled;
     var buttons = imce.toolbarButtons;
     for (i in buttons) {
-      if (!buttons.hasOwnProperty(i)) {
+      if (!imce.owns(buttons, i)) {
         continue;
       }
       Tbb = buttons[i];
-      if ((perm = Tbb.permission)) {
+      if (perm = Tbb.permission) {
         perm = perm.split('|');
         disabled = true;
         for (j in perm) {
@@ -503,7 +503,7 @@
    */
   imce.previewItem = function (Item) {
     var currentItem = imce.previewingItem;
-    if ((imce.previewingItem = Item)) {
+    if (imce.previewingItem = Item) {
       $(imce.previewEl).html(Item.createPreviewEl());
       imce.trigger('previewItem', Item);
     }
@@ -555,7 +555,7 @@
     var names;
     var group = {};
     for (i in items) {
-      if (!items.hasOwnProperty(i)) {
+      if (!imce.owns(items, i)) {
         continue;
       }
       Item = items[i];
@@ -577,7 +577,7 @@
     var selected;
     var groups = imce.groupItems(items);
     for (path in groups) {
-      if (!groups.hasOwnProperty(path)) {
+      if (!imce.owns(groups, path)) {
         continue;
       }
       Folder = imce.getFolder(path);
@@ -602,12 +602,12 @@
     var Item;
     var Folder;
     for (i in items) {
-      if (!items.hasOwnProperty(i)) {
+      if (!imce.owns(items, i)) {
         continue;
       }
       Item = items[i];
       if (Item.isFolder) {
-        if ((Folder = Item.hasPredefinedPath())) {
+        if (Folder = Item.hasPredefinedPath()) {
           imce.setMessage(Drupal.t('%path is a predefined path and can not be modified.', {'%path': Folder.getPath()}));
           return false;
         }
@@ -632,7 +632,7 @@
    */
   imce.validateExtensions = function (items, exts) {
     for (var i in items) {
-      if (!imce.validateExtension(items[i].ext, exts)) {
+      if (imce.owns(items, i) && !imce.validateExtension(items[i].ext, exts)) {
         return false;
       }
     }
@@ -753,10 +753,10 @@
     var Folder = imce.activeFolder;
     var prvEl;
     var prvFolder;
-    if ((prvEl = Folder.branchEl.previousSibling)) {
-      if ((prvFolder = prvEl.Folder)) {
+    if (prvEl = Folder.branchEl.previousSibling) {
+      if (prvFolder = prvEl.Folder) {
         while (prvFolder.expanded) {
-          if ((prvEl = prvFolder.subtreeEl.lastChild)) {
+          if (prvEl = prvFolder.subtreeEl.lastChild) {
             prvFolder = prvEl.Folder;
           }
         }
@@ -784,11 +784,11 @@
     else {
       // noinspection Eslint
       do {
-        if ((nextEl = Folder.branchEl.nextSibling)) {
+        if (nextEl = Folder.branchEl.nextSibling) {
           nextFolder = nextEl.Folder;
           break;
         }
-      } while (typeof (Folder = Folder.parent) !== "undefined");
+      } while (Folder = Folder.parent);
     }
     if (nextFolder) {
       nextFolder.activate();
@@ -878,7 +878,7 @@
     var e = imce.eFix(event);
     var Folder = imce.activeFolder;
     var sort = Folder.activeSort || {};
-    if ((key = e.target.getAttribute('data-sort'))) {
+    if (key = e.target.getAttribute('data-sort')) {
       Folder.sortItems(key, key === sort.key ? !sort.desc : sort.desc);
     }
   };
@@ -917,10 +917,10 @@
     var i = 0;
     var Folder = imce.activeFolder;
     var key = e.keyCode;
-    if ((Item = imce.getLastSelected())) {
+    if (Item = imce.getLastSelected()) {
       i = Folder.indexOf(Item) + (key % 2 ? key - 38 : imce.countElPerRow(Item.el) * (key - 39));
     }
-    if ((Item = Folder.getItemAt(i))) {
+    if (Item = Folder.getItemAt(i)) {
       Item.click(e);
       Item.scrollIntoView();
     }
@@ -968,7 +968,7 @@
   imce.eWinBeforeunload = function (e) {
     // Store active sort.
     var data = {};
-    if ((data.activeSort = imce.activeSort)) {
+    if (data.activeSort = imce.activeSort) {
       imce.trigger('storeLocalData', data);
       try {
         localStorage.setItem('imce.local', JSON.stringify(data));
@@ -1037,7 +1037,7 @@
     var ret = [];
     if (handlers) {
       for (i in handlers) {
-        if ((handler = handlers[i])) {
+        if (handler = handlers[i]) {
           if (handler.apply) {
             ret.push(handler.apply(imce, Array.prototype.slice.call(arguments, 1)));
           }
@@ -1053,7 +1053,7 @@
    */
   imce.addShortcut = function (shortcut, handler, area) {
     var shortcuts;
-    if ((shortcuts = imce.getAreaShortcuts(area))) {
+    if (shortcuts = imce.getAreaShortcuts(area)) {
       shortcuts[shortcut.toUpperCase()] = handler;
     }
   };
@@ -1063,7 +1063,7 @@
    */
   imce.getShortcut = function (shortcut, area) {
     var shortcuts;
-    if ((shortcuts = imce.getAreaShortcuts(area))) {
+    if (shortcuts = imce.getAreaShortcuts(area)) {
       return shortcuts[shortcut.toUpperCase()];
     }
   };
@@ -1073,7 +1073,7 @@
    */
   imce.removeShortcut = function (shortcut, area) {
     var shortcuts;
-    if ((shortcuts = imce.getAreaShortcuts(area))) {
+    if (shortcuts = imce.getAreaShortcuts(area)) {
       delete shortcuts[shortcut.toUpperCase()];
     }
   };
@@ -1200,7 +1200,7 @@
     var Folder = opt && opt.activeFolder != null ? opt.activeFolder : imce.activeFolder;
     var data = {jsop: jsop, token: imce.getConf('token')};
     if (Folder) {
-      if ((path = Folder.getPath())) {
+      if (path = Folder.getPath()) {
         data.active_path = path;
       }
     }
@@ -1243,13 +1243,13 @@
   imce.ajaxBeforeSend = function (xhr, opt) {
     var handler;
     var Folder;
-    if ((handler = opt.customBeforeSend)) {
+    if (handler = opt.customBeforeSend) {
       if (handler.apply(this, arguments) === false) {
         opt.activeFolder = null;
         return false;
       }
     }
-    if ((Folder = opt.activeFolder)) {
+    if (Folder = opt.activeFolder) {
       Folder.setBusy(true);
     }
   };
@@ -1263,7 +1263,7 @@
     // Make the response available in complete handlers.
     opt.response = response;
     imce.ajaxProcessResponse(response);
-    if ((handler = opt.customSuccess)) {
+    if (handler = opt.customSuccess) {
       handler.apply(opt, arguments);
     }
   };
@@ -1275,10 +1275,10 @@
     var Folder;
     var handler;
     var opt = this;
-    if ((Folder = opt.activeFolder)) {
+    if (Folder = opt.activeFolder) {
       Folder.setBusy(false);
     }
-    if ((handler = opt.customComplete)) {
+    if (handler = opt.customComplete) {
       handler.apply(opt, arguments);
     }
     opt.response = opt.activeFolder = null;
@@ -1309,9 +1309,9 @@
     var path;
     var Folder;
     var added;
-    if ((added = response.added)) {
+    if (added = response.added) {
       for (path in added) {
-        if ((Folder = imce.addFolder(path))) {
+        if (Folder = imce.addFolder(path)) {
           Folder.addContent(added[path], true);
           imce.contentEl.focus();
         }
@@ -1328,7 +1328,7 @@
     var paths = response.removed;
     if (paths) {
       for (i in paths) {
-        if ((Item = imce.getItem(paths[i]))) {
+        if (Item = imce.getItem(paths[i])) {
           Item.remove();
         }
       }
@@ -1344,7 +1344,7 @@
     var msgs = response.messages;
     if (msgs) {
       for (type in msgs) {
-        if (msgs.hasOwnProperty(type)) {
+        if (imce.owns(msgs, type)) {
           for (i in msgs[type]) {
             if (msgs[type].hasOwnProperty(i)) {
               imce.setMessage(msgs[type][i], type);
@@ -1620,10 +1620,10 @@
     var query = imce.query;
     if (!query) {
       query = imce.query = {};
-      if ((str = location.search)) {
+      if (str = location.search) {
         parts = str.substr(1).split('&');
         for (i in parts) {
-          if (parts.hasOwnProperty(i)) {
+          if (imce.owns(parts, i)) {
             part = parts[i].split('=');
             query[imce.decode(part[0])] = part[1] ? imce.decode(part[1]) : '';
           }
@@ -1740,7 +1740,7 @@
       state = true;
     }
     for (i in items) {
-      if (items.hasOwnProperty(i)) {
+      if (imce.owns(items, i)) {
         item = items[i];
         if (!prop || (item[prop] ? state : !state)) {
           return item;

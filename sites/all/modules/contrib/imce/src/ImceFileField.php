@@ -9,8 +9,6 @@ namespace Drupal\imce;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Field\WidgetInterface;
-use Drupal\file\Entity\File;
-use Drupal\imce\Imce;
 
 /**
  * Defines methods for integrating Imce into file field widgets.
@@ -33,7 +31,7 @@ class ImceFileField {
   /**
    * Checks if a widget is supported.
    */
-  public static function isWidgetSupported($widget) {
+  public static function isWidgetSupported(WidgetInterface $widget) {
     return in_array($widget->getPluginId(), static::supportedWidgets());
   }
 
@@ -45,7 +43,7 @@ class ImceFileField {
     if (static::isWidgetSupported($widget)) {
       $form['enabled'] = array(
         '#type' => 'checkbox',
-        '#title' => t('Allow users to select files from <a href="!url">Imce File Manager</a> for this field.', array('!url' => \Drupal::url('imce.admin'))),
+        '#title' => t('Allow users to select files from <a href=":url">Imce File Manager</a> for this field.', array(':url' => \Drupal::url('imce.admin'))),
         '#default_value' => $widget->getThirdPartySetting('imce', 'enabled'),
       );
     }
@@ -59,7 +57,7 @@ class ImceFileField {
     $widget = $context['widget'];
     if (static::isWidgetSupported($widget)) {
       $status = $widget->getThirdPartySetting('imce', 'enabled') ? t('Yes') : t('No');
-      $summary[] = t('Imce enabled: !status', array('!status' => $status));
+      $summary[] = t('Imce enabled: @status', array('@status' => $status));
     }
   }
 
@@ -67,11 +65,8 @@ class ImceFileField {
    * Processes widget form.
    */
   public static function processWidget($element, FormStateInterface $form_state, $form) {
-    $element['#id'] = $element['#attributes']['data-drupal-selector'];
     // Button
     $element['imce_button'] = array(
-      '#name' => $element['#name'] . '[imce_button]',
-      '#id' => $element['#id'] . '-imce-button',
       '#attributes' => array(
         'class' => array('hidden', 'imce-filefield-button'),
         'data-imce-url' => \Drupal::url('imce.page', array('scheme' => $element['#scheme'])),
@@ -80,7 +75,6 @@ class ImceFileField {
     // Path input
     $element['imce_paths'] = array(
       '#type' => 'hidden',
-      '#attributes' => array('id' => $element['#id'] . '-imce-paths'),
       // Reset value to prevent consistent errors
       '#value' => '',
     );

@@ -73,7 +73,7 @@
     var items = Folder.getItems();
     // Remove the items that no longer exist.
     for (i in items) {
-      if (!items.hasOwnProperty(i)) {
+      if (!imce.owns(items, i)) {
         continue;
       }
       Item = items[i];
@@ -121,7 +121,7 @@
       imce.deselectAll();
       if (files) {
         for (fname in files) {
-          if (!files.hasOwnProperty(fname)) {
+          if (!imce.owns(files, fname)) {
             continue;
           }
           Folder.getItem(fname).select();
@@ -129,14 +129,14 @@
       }
       if (subfolders) {
         for (sname in subfolders) {
-          if (!subfolders.hasOwnProperty(sname)) {
+          if (!imce.owns(subfolders, sname)) {
             continue;
           }
           Folder.getItem(sname).select();
         }
       }
       // Scroll the last item into view
-      if ((name = (fname || sname))) {
+      if (name = (fname || sname)) {
         Folder.getItem(name).scrollIntoView();
       }
     }
@@ -152,7 +152,7 @@
     if (items) {
       for (name in items) {
         // Update
-        if ((Item = this.getItem(name))) {
+        if (Item = this.getItem(name)) {
           Item.extend(items[name]);
           this.updateStatus();
         }
@@ -186,7 +186,7 @@
     // Remove the item from old parent
     Item.remove(true);
     // Remove existing item with the same name
-    if ((existing = Folder.getItem(name))) {
+    if (existing = Folder.getItem(name)) {
       existing.remove();
     }
     // Append item.
@@ -223,7 +223,7 @@
       // Remove all descendants of the subfolder.
       if (Item.isFolder) {
         for (i in Item.items) {
-          if (!Item.items.hasOwnProperty(i)) {
+          if (!imce.owns(Item.items, i)) {
             continue;
           }
           Item.removeItem(Item.items[i]);
@@ -267,7 +267,7 @@
       // Remove
       if (newpath == null) {
         for (i in subfolders) {
-          if (!subfolders.hasOwnProperty(i)) {
+          if (!imce.owns(subfolders, i)) {
             continue;
           }
           subfolders[i].setPath(null);
@@ -281,7 +281,7 @@
         imce.tree[newpath] = Folder;
         Folder.setDisabled(!Folder.getConf());
         for (i in subfolders) {
-          if (!subfolders.hasOwnProperty(i)) {
+          if (!imce.owns(subfolders, i)) {
             continue;
           }
           subfolders[i].setPath(newpath + '/' + subfolders[i].name);
@@ -307,8 +307,8 @@
     if (conf) {
       return conf;
     }
-    if ((parent = this.parent)) {
-      if ((conf = parent.getConf())) {
+    if (parent = this.parent) {
+      if (conf = parent.getConf()) {
         if (imce.permissionInFolderConf('browse_subfolders', conf)) {
           return $.extend({inherited: true}, conf);
         }
@@ -455,7 +455,7 @@
    */
   Folder.selectAll = function () {
     for (var i in this.items) {
-      if (!this.items.hasOwnProperty(i)) {
+      if (!imce.owns(this.items, i)) {
         continue;
       }
       this.items[i].select();
@@ -476,7 +476,7 @@
     var i;
     var count = 0;
     for (i in this.subfolders) {
-      if (!this.subfolders.hasOwnProperty(i)) {
+      if (!imce.owns(this.subfolders, i)) {
         continue;
       }
       count++;
@@ -625,13 +625,13 @@
     // Remove lazy sort flag.
     Folder.needSort = 0;
     // Check sorter
-    if ((sorter = imce.sorters[key])) {
+    if (sorter = imce.sorters[key]) {
       items.sort(sorter);
       if (desc) {
         items.reverse();
       }
       for (i in items) {
-        if (!items.hasOwnProperty(i)) {
+        if (!imce.owns(items, i)) {
           continue;
         }
         this.contentEl.appendChild(items[i].el);
@@ -650,7 +650,7 @@
     var subfolders = Folder.subfolders;
     var arr = [];
     for (i in subfolders) {
-      if (!subfolders.hasOwnProperty(i)) {
+      if (!imce.owns(subfolders, i)) {
         continue;
       }
       arr.push(subfolders[i]);
@@ -658,7 +658,7 @@
     if (arr.length > 1) {
       arr.sort(imce.sortBranchName);
       for (i in arr) {
-        if (!arr.hasOwnProperty(i)) {
+        if (!imce.owns(arr, i)) {
           continue;
         }
         Folder.subtreeEl.appendChild(arr[i].branchEl);
@@ -712,7 +712,7 @@
     var Folder;
     var subfolders = this.subfolders;
     for (i in subfolders) {
-      if ((Folder = subfolders[i].hasPredefinedPath())) {
+      if (Folder = subfolders[i].hasPredefinedPath()) {
         return Folder;
       }
     }
@@ -734,7 +734,7 @@
     var size = 0;
     var files = this.files;
     for (i in files) {
-      if (!files.hasOwnProperty(i)) {
+      if (!imce.owns(files, i)) {
         continue;
       }
       size += files[i].size || 0;

@@ -71,7 +71,9 @@
   <header>
     <h2 class="itk-boxlist--header"><a href="{{ url }}">{{ label }}</a></h2>
     {{ content.field_related_page_teaser }}
+    {% if not content.field_related_page_teaser or not content.field_related_page_image %}
     <a href="{{ url }}">{{ label }}</a>
+    {% endif %}
   </header>
   {{ content.field_related_page_image }}
 </article>

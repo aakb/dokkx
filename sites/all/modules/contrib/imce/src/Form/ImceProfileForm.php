@@ -31,7 +31,7 @@ class ImceProfileForm extends EntityForm {
     // Check duplication
     if ($this->getOperation() === 'duplicate') {
       $imce_profile = $imce_profile->createDuplicate();
-      $imce_profile->set('label', $this->t('Duplicate of !label', array('!label' => $imce_profile->label())));
+      $imce_profile->set('label', $this->t('Duplicate of @label', array('@label' => $imce_profile->label())));
       $this->setEntity($imce_profile);
     }
     // Label
@@ -150,7 +150,7 @@ class ImceProfileForm extends EntityForm {
     $conf['folders'] = array(
       '#type' => 'fieldset',
       '#title' => $this->t('Folders'),
-      'description' => array('#markup' => '<div class="description">' . $this->t('You can use user tokens in folder paths, e.g. !tokens.', array('!tokens' => '[user:uid], [user:name]' )) . ' ' . $this->t('Subfolders inherit parent permissions when subfolder browsing is enabled.') . '</div>'),
+      'description' => array('#markup' => '<div class="description">' . $this->t('You can use user tokens in folder paths, e.g. @tokens.', array('@tokens' => '[user:uid], [user:name]' )) . ' ' . $this->t('Subfolders inherit parent permissions when subfolder browsing is enabled.') . '</div>'),
       '#weight' => 10,
     );
     $folders = $imce_profile->getConf('folders', array());
@@ -209,7 +209,7 @@ class ImceProfileForm extends EntityForm {
   /**
    * {@inheritdoc}
    */
-  public function validate(array $form, FormStateInterface $form_state) {
+  public function validateForm(array &$form, FormStateInterface $form_state) {
     // Check folders
     $folders = array();
     foreach ($form_state->getValue(array('conf', 'folders')) as $i => $folder) {
@@ -234,7 +234,7 @@ class ImceProfileForm extends EntityForm {
     $form_state->setValue(array('conf', 'folders'), array_values($folders));
     // Call plugin validators
     \Drupal::service('plugin.manager.imce.plugin')->validateProfileForm($form, $form_state, $this->getEntity());
-    return parent::validate($form, $form_state);
+    return parent::validateForm($form, $form_state);
   }
 
   /**
