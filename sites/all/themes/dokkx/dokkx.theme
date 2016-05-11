@@ -132,3 +132,13 @@ function dokkx_form_contact_message_book_en_rundvisning_form_alter(&$form, \Drup
 
   unset($form['actions']['preview']);
 }
+
+
+/**
+ * Implements hook_preprocess_field__().
+ *
+ * Enable preprocess function for specific fields.
+ */
+function dokkx_preprocess_field__field_iframe(&$variables) {
+  $variables['unformatted_iframe'] = strip_tags($variables['items']['0']['content']['#context']['value'], '<iframe>');
+}
