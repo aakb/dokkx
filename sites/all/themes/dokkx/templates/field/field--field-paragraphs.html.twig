@@ -39,11 +39,12 @@
  */
 #}
 
+<div class="content--text">
+  {% if not label_hidden %}
+    {{ label }}
+  {% endif %}
 
-{% if not label_hidden %}
-  {{ label }}
-{% endif %}
-
-{% for item in items %}
-  {{ item.content }}
-{% endfor %}
+  {% for item in items %}
+    {{ item.content }}
+  {% endfor %}
+</div>
