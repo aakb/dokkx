@@ -1,5 +1,5 @@
 uuid: 3d8e38d6-d865-4b34-9456-86362ff0bd2d
-langcode: en
+langcode: da
 status: true
 dependencies:
   config:
@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.event.field_location
     - field.field.node.event.field_main_image
     - field.field.node.event.field_pages
+    - field.field.node.event.field_paragraphs
     - field.field.node.event.field_related_page_image
     - field.field.node.event.field_related_page_teaser
     - field.field.node.event.field_starttime
@@ -49,6 +50,7 @@ hidden:
   field_location: true
   field_main_image: true
   field_pages: true
+  field_paragraphs: true
   field_starttime: true
   langcode: true
   links: true

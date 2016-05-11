@@ -13,6 +13,7 @@ module:
   dynamic_page_cache: 0
   editor: 0
   entity_reference: 0
+  entity_reference_revisions: 0
   field: 0
   field_group: 0
   field_ui: 0
@@ -21,6 +22,7 @@ module:
   image: 0
   imce: 0
   itk_instagram_hashtag: 0
+  itk_paragraph: 0
   itkore_base: 0
   itkore_blocks: 0
   itkore_content_types: 0
@@ -38,6 +40,7 @@ module:
   menu_ui: 0
   node: 0
   page_cache: 0
+  paragraphs: 0
   path: 0
   pathauto: 0
   redirect: 0
@@ -52,6 +55,7 @@ module:
   user: 0
   views: 0
   views_ui: 0
+  youtube: 0
   minimal: 1000
 theme:
   stark: 0
@@ -62,3 +66,4 @@ theme:
   itkore: 0
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU
+langcode: da

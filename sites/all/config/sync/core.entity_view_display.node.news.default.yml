@@ -1,5 +1,5 @@
 uuid: 1a16a243-52cf-4ae3-9b00-a10d9105d89c
-langcode: en
+langcode: da
 status: true
 dependencies:
   config:
@@ -8,11 +8,13 @@ dependencies:
     - field.field.node.news.field_lead
     - field.field.node.news.field_main_image
     - field.field.node.news.field_pages
+    - field.field.node.news.field_paragraphs
     - field.field.node.news.field_related_page_image
     - field.field.node.news.field_related_page_teaser
     - field.field.node.news.field_related_page_title
     - node.type.news
   module:
+    - entity_reference_revisions
     - itk_instagram_hashtag
     - responsive_image
     - text
@@ -31,7 +33,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_instagram:
-    weight: 4
+    weight: 5
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -53,14 +55,22 @@ content:
     type: responsive_image
   field_pages:
     type: entity_reference_entity_view
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       view_mode: teaser
       link: false
     third_party_settings: {  }
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
   field_related_page_title:
-    weight: 5
+    weight: 6
     label: hidden
     settings:
       link_to_entity: false

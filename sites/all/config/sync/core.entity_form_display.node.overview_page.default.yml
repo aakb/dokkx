@@ -1,5 +1,5 @@
 uuid: 831c2d9b-523c-4953-9808-8fd57b54eac4
-langcode: en
+langcode: da
 status: true
 dependencies:
   config:
@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.overview_page.field_lead
     - field.field.node.overview_page.field_main_image
     - field.field.node.overview_page.field_pages
+    - field.field.node.overview_page.field_paragraphs
     - field.field.node.overview_page.field_related_page_image
     - field.field.node.overview_page.field_related_page_teaser
     - field.field.node.overview_page.field_related_page_title
@@ -18,6 +19,7 @@ dependencies:
     - image
     - imce
     - itk_instagram_hashtag
+    - paragraphs
     - path
     - text
 third_party_settings:
@@ -28,7 +30,7 @@ third_party_settings:
         - field_related_page_teaser
         - field_related_page_image
       parent_name: ''
-      weight: 10
+      weight: 11
       label: 'Teaser display for this page'
       format_type: tab
       format_settings:
@@ -41,7 +43,7 @@ third_party_settings:
       children:
         - field_pages
       parent_name: ''
-      weight: 13
+      weight: 12
       label: 'Related content'
       format_type: tab
       format_settings:
@@ -55,7 +57,7 @@ third_party_settings:
       children:
         - field_instagram
       parent_name: ''
-      weight: 14
+      weight: 13
       label: 'Instagram feed'
       format_type: tab
       format_settings:
@@ -64,6 +66,18 @@ third_party_settings:
         classes: ''
         id: ''
         required_fields: true
+    group_flexible_content:
+      children:
+        - field_paragraphs
+      parent_name: ''
+      weight: 10
+      label: 'Fleksibelt indhold'
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
+        classes: ''
+        id: ''
 _core:
   default_config_hash: SWRpNgEMSmbuztLDC3j3W2hsagYlqhKmUFUoc8ACtEE
 id: node.overview_page.default
@@ -103,7 +117,7 @@ content:
       preview_image_style: thumbnail
     third_party_settings:
       imce:
-        enabled: 1
+        enabled: true
     type: image_image
   field_pages:
     weight: 14
@@ -113,6 +127,16 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+  field_paragraphs:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+    third_party_settings: {  }
   field_related_page_image:
     weight: 28
     settings:
@@ -120,7 +144,7 @@ content:
       preview_image_style: thumbnail
     third_party_settings:
       imce:
-        enabled: 1
+        enabled: true
     type: image_image
   field_related_page_teaser:
     weight: 27

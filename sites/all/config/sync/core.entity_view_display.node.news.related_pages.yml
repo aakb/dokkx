@@ -1,5 +1,5 @@
 uuid: 20edec74-c29c-4580-8034-52dbe65e765e
-langcode: en
+langcode: da
 status: true
 dependencies:
   config:
@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.news.field_lead
     - field.field.node.news.field_main_image
     - field.field.node.news.field_pages
+    - field.field.node.news.field_paragraphs
     - field.field.node.news.field_related_page_image
     - field.field.node.news.field_related_page_teaser
     - field.field.node.news.field_related_page_title
@@ -52,5 +53,6 @@ hidden:
   field_lead: true
   field_main_image: true
   field_pages: true
+  field_paragraphs: true
   langcode: true
   links: true
