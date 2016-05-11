@@ -14,68 +14,10 @@ conf:
   replace: 1
   folders:
     -
-      path: ''
+      path: content
       permissions:
         all: true
-        browse_files: false
-        browse_subfolders: false
-        create_subfolders: false
-        upload_files: false
-        delete_files: false
-        delete_subfolders: false
-        resize_images: false
     -
-      path: ''
+      path: images
       permissions:
-        all: false
-        browse_files: false
-        browse_subfolders: false
-        create_subfolders: false
-        upload_files: false
-        delete_files: false
-        delete_subfolders: false
-        resize_images: false
-    -
-      path: ''
-      permissions:
-        all: false
-        browse_files: false
-        browse_subfolders: false
-        create_subfolders: false
-        upload_files: false
-        delete_files: false
-        delete_subfolders: false
-        resize_images: false
-    -
-      path: ''
-      permissions:
-        all: false
-        browse_files: false
-        browse_subfolders: false
-        create_subfolders: false
-        upload_files: false
-        delete_files: false
-        delete_subfolders: false
-        resize_images: false
-    -
-      path: ''
-      permissions:
-        all: false
-        browse_files: false
-        browse_subfolders: false
-        create_subfolders: false
-        upload_files: false
-        delete_files: false
-        delete_subfolders: false
-        resize_images: false
-    -
-      path: ''
-      permissions:
-        all: false
-        browse_files: false
-        browse_subfolders: false
-        create_subfolders: false
-        upload_files: false
-        delete_files: false
-        delete_subfolders: false
-        resize_images: false
+        all: true

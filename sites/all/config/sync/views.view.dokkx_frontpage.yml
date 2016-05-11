@@ -6,7 +6,7 @@ dependencies:
     - field.storage.node.field_main_image
     - field.storage.node.field_related_page_teaser
     - field.storage.node.field_related_page_title
-    - node.type.page
+    - node.type.overview_page
   module:
     - image
     - node
@@ -16,7 +16,7 @@ _core:
 id: dokkx_frontpage
 label: 'Dokkx Frontpage'
 module: node
-description: 'All content promoted to the front page.'
+description: 'Alt indhold som vises på forsiden.'
 tag: default
 base_table: node_field_data
 base_field: nid
@@ -48,13 +48,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Udfør
           reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          reset_button_label: Gendan
+          exposed_sorts_label: 'Sortér efter'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Stigende
+          sort_desc_label: Faldende
       filters:
         type:
           id: type
@@ -65,7 +65,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            page: page
+            overview_page: overview_page
           group: 1
           exposed: false
           expose:
@@ -175,7 +175,7 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 2
+          items_per_page: 9
           offset: 0
       query:
         type: views_query
@@ -214,7 +214,7 @@ display:
           row_class: ''
           default_row_class: false
           uses_fields: false
-      title: 'Oplevelser på DokkX'
+      title: Velfærdsteknologier
       header:
         area_text_custom:
           id: area_text_custom
@@ -395,7 +395,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -547,7 +547,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<article class=\"itk-boxlist--item\">\n  <header>\n{% if field_related_page_title %}\n    <h2 class=\"itk-boxlist--header\"><a href=\"{{ path }}\">{{ field_related_page_title }}</a></h2>\n{% else %}\n    <h2 class=\"itk-boxlist--header\"><a href=\"{{ path }}\">{{ title }}</a></h2>\n{% endif %}\n    <p>{{ field_related_page_teaser }}</p>\n    <a href=\"{{ path }}\">{{ title }}</a>\n  </header>\n   <figure>{{ field_main_image }}</figure>\n</article>"
+            text: "<article class=\"itk-boxlist-gallery--item\">\n  <header>{% if field_related_page_title %}\n    <h2 class=\"itk-boxlist-gallery--header\"><a href=\"{{ path }}\">{{ field_related_page_title }}</a></h2>\n{% else %}\n    <h2 class=\"itk-boxlist-gallery--header\"><a href=\"{{ path }}\">{{ title }}</a></h2>\n{% endif %}\n  </header>\n   <figure>{{ field_main_image }}</figure>\n    <p>{{ field_related_page_teaser }}</p>\n    <a href=\"{{ path }}\" class=\"itk-boxlist-gallery--link\">{% trans %}Read more{% endtrans %}</a>\n</article>"
             make_link: false
             path: ''
             absolute: false
@@ -587,7 +587,7 @@ display:
           plugin_id: custom
       arguments: {  }
       display_extenders: {  }
-      css_class: itk-boxlist
+      css_class: itk-boxlist-gallery
     display_plugin: default
     display_title: Master
     id: default
@@ -618,7 +618,7 @@ display:
         context: '0'
         menu_name: main
     display_plugin: page
-    display_title: Page
+    display_title: Side
     id: page_1
     position: 1
     cache_metadata:
