@@ -14,7 +14,7 @@ field_name: field_image
 entity_type: paragraph
 bundle: itk_internal_link
 label: Image
-description: ''
+description: 'En minimum størrelse på billedet på 224×224 giver det bedste resultat.'
 required: false
 translatable: false
 default_value: {  }

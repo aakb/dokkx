@@ -14,7 +14,7 @@ field_name: field_main_image
 entity_type: node
 bundle: page
 label: 'Main Image'
-description: ''
+description: 'En minimum størrelse på billedet på 2048×1024 giver det bedste resultat.'
 required: false
 translatable: false
 default_value: {  }

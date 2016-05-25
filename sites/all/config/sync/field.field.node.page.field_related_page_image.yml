@@ -14,7 +14,7 @@ field_name: field_related_page_image
 entity_type: node
 bundle: page
 label: 'Related Page Image'
-description: 'Used when the page is displayed as an related page'
+description: 'En minimum størrelse på billedet på 224×224 giver det bedste resultat.'
 required: false
 translatable: false
 default_value: {  }
