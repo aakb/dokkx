@@ -35,6 +35,7 @@ function dokkx_preprocess_page (&$variables) {
     $variables['footer_text'] = check_markup($config->get('itkore_footer.footer_text'), 'filtered_html');
     $variables['footer_twitter'] = $config->get('itkore_footer.footer_twitter');
     $variables['footer_instagram'] = $config->get('itkore_footer.footer_instagram');
+    $variables['footer_facebook'] = $config->get('itkore_footer.footer_facebook');
     $variables['footer_linkedin'] = $config->get('itkore_footer.footer_linkedin');
   }
 }

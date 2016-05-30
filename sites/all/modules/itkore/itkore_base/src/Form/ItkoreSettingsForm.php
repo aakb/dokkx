@@ -133,10 +133,10 @@ class ItkoreSettingsForm extends FormBase {
       '#weight' => '2',
     );
 
-    $form['footer_wrapper']['footer_instagram'] = array(
-      '#title' => $this->t('Instagram URL'),
+    $form['footer_wrapper']['footer_facebook'] = array(
+      '#title' => $this->t('Facebook URL'),
       '#type' => 'textfield',
-      '#default_value' => $config->get('itkore_footer.footer_instagram'),
+      '#default_value' => $config->get('itkore_footer.footer_facebook'),
       '#weight' => '3',
     );
 
@@ -201,7 +201,7 @@ class ItkoreSettingsForm extends FormBase {
       'itkore_frontpage.frontpage_link' => $form_state->getValue('frontpage_link'),
       'itkore_footer.footer_text' => $form_state->getValue('footer_text')['value'],
       'itkore_footer.footer_twitter' => $form_state->getValue('footer_twitter'),
-      'itkore_footer.footer_instagram' => $form_state->getValue('footer_instagram'),
+      'itkore_footer.footer_facebook' => $form_state->getValue('footer_facebook'),
       'itkore_footer.footer_linkedin' => $form_state->getValue('footer_linkedin'),
       'itkore_frontpage.frontpage_image' => $file ? $file->id() : NULL
       )
