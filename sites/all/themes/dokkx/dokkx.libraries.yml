@@ -12,6 +12,7 @@ global-js:
   js:
     js/menu-toggle.js: {}
     js/header-scrolling.js: {}
+    js/site-improve.js: {}
   dependencies:
     - core/jquery
     - core/jquery.once
