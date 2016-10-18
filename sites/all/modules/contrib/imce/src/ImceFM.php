@@ -11,9 +11,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Drupal\Component\Serialization\Json;
-use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Component\Render\MarkupInterface;
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Session\AccountProxyInterface;
-use Drupal\imce\Imce;
 
 /**
  * Imce File Manager.
@@ -476,7 +476,7 @@ class ImceFM {
     $messages = drupal_get_messages();
     foreach ($messages as &$group) {
       foreach ($group as &$message) {
-        $message = SafeMarkup::escape($message);
+        $message = $message instanceof MarkupInterface ? $message . '' : Html::escape($message);
       }
     }
     // Merge with file manager messages.
@@ -605,6 +605,8 @@ class ImceFM {
       ),
     );
     $page['#attached']['html_head'][] = array($robots, 'robots');
+    // Disable cache
+    $page['#cache']['max-age'] = 0;
     // Run builders of available plugins
     \Drupal::service('plugin.manager.imce.plugin')->buildPage($page, $this);
     // Add active path to the conf.
@@ -632,7 +634,7 @@ class ImceFM {
    */
   public function buildRenderPage() {
     $page = $this->buildPage();
-    return \Drupal::service('bare_html_page_renderer')->renderBarePage($page, t('File manager'), 'imce_page', array('#show_messages' => FALSE));
+    return \Drupal::service('bare_html_page_renderer')->renderBarePage($page, t('File manager'), 'imce_page', array('#show_messages' => FALSE))->getContent();
   }
 
   /**
@@ -651,8 +653,7 @@ class ImceFM {
         return new JsonResponse($data);
       }
       // Build and render the main page.
-      $output = $this->buildRenderPage();
-      return new Response($output);
+      return new Response($this->buildRenderPage());
     }
   }
 

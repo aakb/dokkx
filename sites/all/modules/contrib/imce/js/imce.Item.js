@@ -91,7 +91,7 @@
     var i;
     var selection = imce.getSelection();
     for (i in selection) {
-      if (selection[i] !== Item) {
+      if (imce.owns(selection, i) && selection[i] !== Item) {
         selection[i].deselect();
       }
     }
@@ -176,8 +176,8 @@
     if (path) {
       return path;
     }
-    if ((parent = this.parent)) {
-      if ((path = parent.getPath())) {
+    if (parent = this.parent) {
+      if (path = parent.getPath()) {
         return imce.joinPaths(path, this.name);
       }
     }
@@ -200,7 +200,7 @@
   Item.getUrl = function (absolute, uncached) {
     var rootUrl;
     var url = '';
-    if ((rootUrl = imce.getConf('root_url'))) {
+    if (rootUrl = imce.getConf('root_url')) {
       url = imce.joinPaths(rootUrl, encodeURIComponent(this.getPath()).replace(/%2F/g, '/'));
       if (absolute && url.charAt(0) === '/' && url.charAt(1) !== '/') {
         url = location.protocol + '//' + location.host + url;
@@ -275,7 +275,7 @@
   Item.extend = function (props) {
     if (props) {
       for (var i in props) {
-        if (!props.hasOwnProperty(i)) {
+        if (!imce.owns(props, i)) {
           continue;
         }
         this.setProperty(i, props[i]);
@@ -406,7 +406,7 @@
     if (!Item[name]) {
       Item[name] = true;
       $(Item.el).addClass(name);
-      if ((el = Item.branchEl)) {
+      if (el = Item.branchEl) {
         $(el).addClass(name);
       }
     }
@@ -421,7 +421,7 @@
     if (Item[name]) {
       Item[name] = false;
       $(Item.el).removeClass(name);
-      if ((el = Item.branchEl)) {
+      if (el = Item.branchEl) {
         $(el).removeClass(name);
       }
     }

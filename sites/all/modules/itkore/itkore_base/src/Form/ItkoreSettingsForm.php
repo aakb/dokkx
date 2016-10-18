@@ -14,7 +14,7 @@ use Drupal\file\Entity\File;
 /**
  * Class ContentEntityExampleSettingsForm.
  * @package Drupal\itkore_base\Form
- * @ingroup itkore_booking
+ * @ingroup itkore_base
  */
 class ItkoreSettingsForm extends FormBase {
 
@@ -54,6 +54,7 @@ class ItkoreSettingsForm extends FormBase {
       '#type' => 'textfield',
       '#default_value' => $config->get('itkore_frontpage.frontpage_title'),
       '#weight' => '1',
+      '#maxlength' => 256,
     );
 
     $form['frontpage_wrapper']['frontpage_lead'] = array(
@@ -61,6 +62,7 @@ class ItkoreSettingsForm extends FormBase {
       '#type' => 'textfield',
       '#default_value' => $config->get('itkore_frontpage.frontpage_lead'),
       '#weight' => '2',
+      '#maxlength' => 256,
     );
 
     $form['frontpage_wrapper']['frontpage_sub'] = array(
@@ -68,6 +70,7 @@ class ItkoreSettingsForm extends FormBase {
       '#type' => 'textfield',
       '#default_value' => $config->get('itkore_frontpage.frontpage_sub'),
       '#weight' => '3',
+      '#maxlength' => 256,
     );
 
     $form['frontpage_wrapper']['frontpage_button'] = array(
@@ -130,10 +133,10 @@ class ItkoreSettingsForm extends FormBase {
       '#weight' => '2',
     );
 
-    $form['footer_wrapper']['footer_instagram'] = array(
-      '#title' => $this->t('Instagram URL'),
+    $form['footer_wrapper']['footer_facebook'] = array(
+      '#title' => $this->t('Facebook URL'),
       '#type' => 'textfield',
-      '#default_value' => $config->get('itkore_footer.footer_instagram'),
+      '#default_value' => $config->get('itkore_footer.footer_facebook'),
       '#weight' => '3',
     );
 
@@ -198,22 +201,10 @@ class ItkoreSettingsForm extends FormBase {
       'itkore_frontpage.frontpage_link' => $form_state->getValue('frontpage_link'),
       'itkore_footer.footer_text' => $form_state->getValue('footer_text')['value'],
       'itkore_footer.footer_twitter' => $form_state->getValue('footer_twitter'),
-      'itkore_footer.footer_instagram' => $form_state->getValue('footer_instagram'),
+      'itkore_footer.footer_facebook' => $form_state->getValue('footer_facebook'),
       'itkore_footer.footer_linkedin' => $form_state->getValue('footer_linkedin'),
       'itkore_frontpage.frontpage_image' => $file ? $file->id() : NULL
       )
     );
   }
-}
-
-/**
- * Deletes a a file from file usage table.
- *
- * @param int $fid
- *   The file id of the file to delete.
- */
-function removeFile($fid) {
-  // Load and delete old file.
-  $file = File::load($fid);
-  \Drupal::service('file.usage')->delete($file, 'itkore_base', 'user', '1', '1');
 }

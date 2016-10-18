@@ -13,7 +13,7 @@
         exec: CKEDITOR.imce.imageDialog
       });
       editor.ui.addButton('ImceImage', {
-        label: Drupal.t('Insert images'),
+        label: CKEDITOR.imce.imageLabel(),
         command: 'imceimage',
         icon: editor.config.ImceImageIcon
       });
@@ -24,6 +24,13 @@
    * Global container for helper methods.
    */
   CKEDITOR.imce = CKEDITOR.imce || {
+
+    /**
+     * Returns image button label.
+     */
+    imageLabel: function () {
+      return Drupal.t('Insert images using Imce File Manager');
+    },
 
     /**
      * Opens Imce for inserting images into CKEditor.
@@ -46,12 +53,12 @@
         var lines = [];
         var selection = imce.getSelection();
         for (i in selection) {
-          if (!selection.hasOwnProperty(i)) {
+          if (!imce.owns(selection, i)) {
             continue;
           }
           File = selection[i];
           if (File.width) {
-            lines.push('<img src="' + File.getUrl() + '" style="width:' + File.width + 'px;height:' + File.height + 'px;" alt="' + File.formatName() + '" />');
+            lines.push('<img src="' + File.getUrl() + '" width="' + File.width + '" height="' + File.height + '" alt="' + File.formatName() + '" />');
           }
         }
         editor.insertHtml(lines.join('<br />'));
