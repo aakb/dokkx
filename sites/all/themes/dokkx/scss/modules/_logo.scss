@@ -28,6 +28,11 @@
   .logo--shape {
     fill: $black;
   }
+
+  // Adjusted height for IE
+  figure {
+    height: 100%;
+  }
 }
 
 // Specific override when viewing the frontpage.
