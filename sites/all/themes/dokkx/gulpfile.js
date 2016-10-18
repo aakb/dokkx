@@ -1,21 +1,22 @@
-// Plugins.
 var gulp = require('gulp');
+
+
+// Plugins.
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 var sass = require('gulp-sass');
+
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var ngAnnotate = require('gulp-ng-annotate');
 var rename = require('gulp-rename');
-var compass = require('gulp-compass');
 
 /**
  * Setting up browsersync.
  * Proxy is the name of the vagrent.
  * Host is the the ip defined in "vagrantfile"
  */
-
 var browserSync = require('browser-sync').create();
 browserSync.init({
   proxy: "dokkx.vm",
@@ -25,14 +26,13 @@ browserSync.init({
 
 // We only want to process our own non-processed JavaScript files.
 var jsPath = ['./js/*.js', '!./js/*.min.*'];
-var sassPath = './sass/**/*.scss';
-var twigPath = './templates/**/*.twig';
+var sassPath = './scss/**/*.scss';
+var phpPath = './**/*.php'; //could also be twig files
 var buildDir = './js';
 
 /**
  * Run Javascript through JSHint.
  */
-
 gulp.task('jshint', function() {
   return gulp.src(jsPath)
     .pipe(jshint())
@@ -46,9 +46,9 @@ gulp.task('sass', function () {
   gulp.src(sassPath)
     .pipe(sourcemaps.init())
     .pipe(sass({
-      // outputStyle: 'compressed',
+      outputStyle: 'compressed',
       includePaths: [
-        '/usr/lib/node_modules/compass-mixins/lib'
+        'scss/assets/compass-mixins/lib',
       ]
     }).on('error', sass.logError))
     .pipe(sourcemaps.write())
@@ -59,19 +59,16 @@ gulp.task('sass', function () {
 /**
  * Watch files for changes and run tasks.
  */
-
 gulp.task('watch', function() {
   gulp.watch(jsPath, ['jshint']);
   gulp.watch(sassPath, ['sass']);
-  gulp.watch(twigPath).on('change', browserSync.reload);
+  gulp.watch(phpPath).on('change', browserSync.reload);
   gulp.watch(jsPath).on('change',browserSync.reload);
 });
-
 
 /**
  * Watch javascript files for changes.
  */
-
 gulp.task('js-watch', function() {
   gulp.watch(jsPath, ['jshint']);
 });
@@ -96,21 +93,6 @@ gulp.task('assetsJs', function () {
     .pipe(concat('assets.js'))
     .pipe(rename({extname: ".min.js"}))
     .pipe(gulp.dest(buildDir))
-});
-
-
-/**
- * Use compass
- */
-gulp.task('compass', function() {
-  gulp.src(sassPath)
-    .pipe(compass({
-      css: 'css',
-      sass: 'scss',
-      image: 'img'
-    }))
-    .pipe(minifycss())
-    .pipe(gulp.dest('html/css'));
 });
 
 
