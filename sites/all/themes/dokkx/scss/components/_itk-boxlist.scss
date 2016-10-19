@@ -141,12 +141,9 @@ $boxlist-padding: 1em;
     position: relative;
     padding-bottom: 3em;
 
-    @include flexbox;
     @include flex-flow(column);
     @include flex-basis(40%);
-
     header {
-      height: 100%; /* IE 11 you can't handle the height! (without this) */
       order: 1;
 
       font-size: .75em;
@@ -159,7 +156,6 @@ $boxlist-padding: 1em;
 
     figure {
       display: block;
-      height: 100%; /* IE 11 you can't handle the height! (without this) */
       margin-top: 1.25em;
       margin-right: auto;
       margin-left: auto;
@@ -219,12 +215,6 @@ $boxlist-padding: 1em;
     min-width: 75%;
     max-width: 15em;
     padding: .5em 1em;
-
-
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
 
     background-color: transparent;
     border: 1px solid $link-color;
