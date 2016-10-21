@@ -594,7 +594,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<article class=\"itk-boxlist--item\">\n  <header>\n{% if field_related_page_title %}\n    <h2 class=\"itk-boxlist--header\"><a href=\"{{ path }}\">{{ field_related_page_title }}</a></h2>\n{% else %}\n    <h2 class=\"itk-boxlist--header\"><a href=\"{{ path }}\">{{ title }}</a></h2>\n{% endif %}\n<div class=\"itk-boxlist--meta\">\n       {{ created }}\n    </div>\n    <p>{{ field_related_page_teaser }}</p>\n    <a href=\"{{ path }}\">{{ title }}</a>\n  </header>\n  <figure>{{ field_main_image }}</figure>\n</article>\n"
+            text: "<article class=\"itk-boxlist--item\">\n  <header>\n{% if field_related_page_title %}\n    <h2 class=\"itk-boxlist--header\"><a href=\"{{ path }}\">{{ field_related_page_title }}</a></h2>\n{% else %}\n    <h2 class=\"itk-boxlist--header\"><a href=\"{{ path }}\">{{ title }}</a></h2>\n{% endif %}\n    <p>{{ field_related_page_teaser }}</p>\n    <a href=\"{{ path }}\">{{ title }}</a>\n  </header>\n  <figure>{{ field_main_image }}</figure>\n</article>\n"
             make_link: false
             path: ''
             absolute: false
