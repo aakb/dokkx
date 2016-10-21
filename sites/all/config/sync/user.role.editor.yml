@@ -63,3 +63,4 @@ permissions:
   53: 'revert page revisions'
   54: 'view page revisions'
   55: 'access itkore settings'
+  56: 'administer nodes'
