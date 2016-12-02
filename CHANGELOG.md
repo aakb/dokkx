@@ -1,7 +1,7 @@
 #CHANGELOG
 
 ##1.0.3
- -  Drupal  8.0.4 -> 8.1.0 
+ -  Drupal  8.0.4 -> 8.1.10 
 
 ##1.0.2
  - SUPPORT-794
