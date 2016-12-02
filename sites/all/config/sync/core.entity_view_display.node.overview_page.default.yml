@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.overview_page.field_related_page_teaser
     - field.field.node.overview_page.field_related_page_title
     - node.type.overview_page
+    - responsive_image.styles.dokkx_content_main_image
   module:
     - entity_reference_revisions
     - itk_instagram_hashtag
