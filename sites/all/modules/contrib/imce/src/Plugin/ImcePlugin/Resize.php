@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\imce\Plugin\ImcePlugin\Resize.
- */
-
 namespace Drupal\imce\Plugin\ImcePlugin;
 
 use Drupal\imce\Imce;
@@ -101,7 +96,7 @@ class Resize extends ImcePluginBase {
           'filesize' => $image->getFileSize(),
           'filemime' => $image->getMimeType(),
         );
-        $file = \Drupal::entityManager()->getStorage('file')->create($values);
+        $file = \Drupal::entityTypeManager()->getStorage('file')->create($values);
         // Check quota
         if ($errors = file_validate_size($file, 0, $fm->getConf('quota'))) {
           file_unmanaged_delete($destination);

@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\imce\Controller\ImceController.
- */
-
 namespace Drupal\imce\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -28,7 +23,7 @@ class ImceController extends ControllerBase {
       '#type' => 'container',
       '#attributes' => array('class' => array('imce-profile-list')),
       'title' => array('#markup' => '<h2>' . $this->t('Configuration Profiles') . '</h2>'),
-      'list' => $this->entityManager()->getListBuilder('imce_profile')->render(),
+      'list' => $this->entityTypeManager()->getListBuilder('imce_profile')->render(),
     );
     return $output;
   }
