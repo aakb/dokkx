@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.event.field_related_page_teaser
     - field.field.node.event.field_starttime
     - node.type.event
+    - responsive_image.styles.dokkx_content_main_image
   module:
     - datetime
     - entity_reference_revisions

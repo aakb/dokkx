@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_main_image
     - field.storage.node.field_related_page_teaser
     - field.storage.node.field_related_page_title
+    - image.style.news_teaser_image
     - node.type.page
   module:
     - image
@@ -712,6 +713,9 @@ display:
             offset: false
             offset_label: Forskydning
       header: {  }
+      menu:
+        enabled: true
+        expanded: false
     cache_metadata:
       contexts:
         - 'languages:language_content'
