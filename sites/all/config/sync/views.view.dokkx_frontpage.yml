@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_main_image
     - field.storage.node.field_related_page_teaser
     - field.storage.node.field_related_page_title
+    - image.style.news_teaser_image
     - node.type.overview_page
   module:
     - image
@@ -547,7 +548,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<article class=\"itk-boxlist-gallery--item\">\n  <header>{% if field_related_page_title %}\n    <h2 class=\"itk-boxlist-gallery--header\"><a href=\"{{ path }}\">{{ field_related_page_title }}</a></h2>\n{% else %}\n    <h2 class=\"itk-boxlist-gallery--header\"><a href=\"{{ path }}\">{{ title }}</a></h2>\n{% endif %}\n  </header>\n   <figure>{{ field_main_image }}</figure>\n    <p>{{ field_related_page_teaser }}</p>\n    <a href=\"{{ path }}\" class=\"itk-boxlist-gallery--link\">{% trans %}Read more{% endtrans %}</a>\n</article>"
+            text: "<article class=\"itk-boxlist-gallery--item\">\n  <header>{% if field_related_page_title %}\n    <h2 class=\"itk-boxlist-gallery--header\"><a href=\"{{ path }}\">{{ field_related_page_title }}</a></h2>\n{% else %}\n    <h2 class=\"itk-boxlist-gallery--header\"><a href=\"{{ path }}\">{{ title }}</a></h2>\n{% endif %}\n  </header>\n   <figure>{{ field_main_image }}</figure>\n{% if field_related_page_teaser %}<p>\n  {{ field_related_page_teaser }}</p>\n{% endif %}\n    <a href=\"{{ path }}\" class=\"itk-boxlist-gallery--link\">{% trans %}Read more about{% endtrans %} {{ title }}</a>\n</article>"
             make_link: false
             path: ''
             absolute: false
@@ -617,6 +618,7 @@ display:
         weight: -50
         context: '0'
         menu_name: main
+        enabled: true
     display_plugin: page
     display_title: Side
     id: page_1

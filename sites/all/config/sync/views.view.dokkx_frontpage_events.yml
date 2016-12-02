@@ -7,6 +7,7 @@ dependencies:
     - field.storage.node.field_main_image
     - field.storage.node.field_related_page_teaser
     - field.storage.node.field_starttime
+    - image.style.news_teaser_image
     - node.type.event
     - system.menu.main
   module:
@@ -798,6 +799,8 @@ display:
         weight: -50
         context: '0'
         menu_name: main
+        enabled: true
+        expanded: false
       header:
         area_text_custom:
           id: area_text_custom

@@ -59,5 +59,13 @@ function dokkx_setup_update_8005() {
   \Drupal::service('module_installer')->uninstall($module_list);
 }
 
-
-
+/**
+ * Uninstall frontpage instagram module.
+ */
+function dokkx_setup_update_8006() {
+  // Enable modules.
+  $module_list = array(
+    'itkore_frontpage_hashtag'
+  );
+  \Drupal::service('module_installer')->uninstall($module_list);
+}
