@@ -1,5 +1,8 @@
 #CHANGELOG
 
+##1.0.6
+ - Fixed bug in paragraphs
+
 ##1.0.5
  -  Drupal                                                   8.1.10             8.2.3              
  -  Chaos tools (ctools)                                     8.x-3.0-alpha23    8.x-3.0-alpha27             
