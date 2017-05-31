@@ -1,10 +1,19 @@
 # CHANGELOG
 
-## v1.0.6
+## v1.0.8
+
+- Changed how settings.php is set up
+- Fixed template paths
+
+## v1.0.7
 
 - Changed project setup to match: https://github.com/drupal-composer/drupal-project
 - Updated drupal and contrib modules
 - Removed itkore theme
+
+## v1.0.6
+
+- Fixed bug in paragraphs
 
 ## v1.0.5
  -  Drupal                                                   8.1.10             8.2.3              
