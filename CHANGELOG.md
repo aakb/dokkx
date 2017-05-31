@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v1.0.8
+
+- Changed how settings.php is set up
+- Fixed template paths
+
 ## v1.0.7
 
 - Changed project setup to match: https://github.com/drupal-composer/drupal-project
@@ -8,7 +13,7 @@
 
 ## v1.0.6
 
- - Fixed bug in paragraphs
+- Fixed bug in paragraphs
 
 ## v1.0.5
 
