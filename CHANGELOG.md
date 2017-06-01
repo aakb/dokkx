@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.0.9
+
+- Removed services.local.yml
+
 ## v1.0.8
 
 - Changed how settings.php is set up
