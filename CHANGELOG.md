@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.1.1
+- SERV-205: Updated drupal core to 8.5.6
+
 ## v1.0.9
 
 - Removed services.local.yml
