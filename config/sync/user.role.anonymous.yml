@@ -10,6 +10,6 @@ weight: 0
 is_admin: false
 permissions:
   - 'access content'
-  - 'view the administration theme'
   - 'access site-wide contact form'
   - 'access user contact forms'
+  - 'view the administration theme'

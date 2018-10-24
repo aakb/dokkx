@@ -33,12 +33,14 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_instagram:
     type: field_instagram_hashtag_default_formatter
     weight: 5
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_lead:
     weight: 1
     label: hidden
@@ -46,6 +48,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_main_image:
     weight: 0
     label: hidden
@@ -54,6 +57,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: responsive_image
+    region: content
   field_pages:
     weight: 4
     label: hidden
@@ -62,6 +66,7 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
     weight: 3
@@ -70,6 +75,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
   field_related_page_title:
     weight: 6
     label: hidden
@@ -77,6 +83,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden:
   field_related_page_image: true
   field_related_page_teaser: true

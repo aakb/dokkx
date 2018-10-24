@@ -8,6 +8,7 @@ module:
   ctools: 0
   datetime: 0
   dblog: 0
+  devel_generate: 0
   dokkx_setup: 0
   dynamic_page_cache: 0
   editor: 0
@@ -38,10 +39,10 @@ module:
   menu_ui: 0
   node: 0
   page_cache: 0
-  paragraphs: 0
   path: 0
   pathauto: 0
   redirect: 0
+  redirect_404: 0
   responsive_image: 0
   system: 0
   taxonomy: 0
@@ -54,6 +55,7 @@ module:
   views: 0
   views_ui: 0
   youtube: 0
+  paragraphs: 11
   minimal: 1000
 theme:
   stark: 0
