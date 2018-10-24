@@ -36,6 +36,7 @@ content:
     weight: 5
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_endtime:
     weight: 3
     label: hidden
@@ -44,12 +45,14 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+    region: content
   field_instagram:
     weight: 8
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: field_instagram_hashtag_default_formatter
+    region: content
   field_lead:
     weight: 0
     label: hidden
@@ -57,6 +60,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_location:
     weight: 4
     label: hidden
@@ -64,6 +68,7 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_main_image:
     weight: 1
     label: hidden
@@ -72,6 +77,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: responsive_image
+    region: content
   field_pages:
     weight: 7
     label: hidden
@@ -80,6 +86,7 @@ content:
       link: false
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   field_paragraphs:
     type: entity_reference_revisions_entity_view
     weight: 6
@@ -88,6 +95,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
   field_starttime:
     weight: 2
     label: hidden
@@ -96,6 +104,7 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+    region: content
 hidden:
   field_related_page_image: true
   field_related_page_teaser: true
