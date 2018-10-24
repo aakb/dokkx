@@ -12,13 +12,13 @@ _core:
   default_config_hash: yMn3GYOqMqTOATNpXQZMYbTAQsuf6-3EL2oNy6Pdvh8
 id: seven_tools
 theme: seven
-region: '-1'
+region: header
 weight: -2
 provider: null
 plugin: 'system_menu_block:tools'
 settings:
   id: 'system_menu_block:tools'
-  label: Tools
+  label: Værktøjer
   provider: system
   label_display: '0'
   level: 1

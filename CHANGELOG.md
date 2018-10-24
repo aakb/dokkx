@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.2
+
+* Updated to drupal 8.6.2.
+
 ## 1.1.1
 - SERV-205: Updated drupal core to 8.5.6
 
