@@ -1399,16 +1399,16 @@
         },
         {
             "name": "drupal/core",
-            "version": "8.6.2",
+            "version": "8.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "356292934802bb1aecc478e88a3cba77442d7c62"
+                "reference": "9e9a1dd9e280ebaf10622217e54448b529167965"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/356292934802bb1aecc478e88a3cba77442d7c62",
-                "reference": "356292934802bb1aecc478e88a3cba77442d7c62",
+                "url": "https://api.github.com/repos/drupal/core/zipball/9e9a1dd9e280ebaf10622217e54448b529167965",
+                "reference": "9e9a1dd9e280ebaf10622217e54448b529167965",
                 "shasum": ""
             },
             "require": {
@@ -1574,7 +1574,7 @@
                 "jcalderonzumba/gastonjs": "^1.0.2",
                 "jcalderonzumba/mink-phantomjs-driver": "^0.3.1",
                 "mikey179/vfsstream": "^1.2",
-                "phpspec/prophecy": "^1.4",
+                "phpspec/prophecy": "^1.7",
                 "phpunit/phpunit": "^4.8.35 || ^6.5",
                 "symfony/css-selector": "^3.4.0",
                 "symfony/debug": "^3.4.0",
@@ -1633,7 +1633,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2018-10-17T22:19:50+00:00"
+            "time": "2018-11-07T14:45:40+00:00"
         },
         {
             "name": "drupal/ctools",
@@ -1659,7 +1659,11 @@
                 },
                 "drupal": {
                     "version": "8.x-3.0",
-                    "datestamp": "1493401742"
+                    "datestamp": "1493401742",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1691,6 +1695,10 @@
                     "name": "Daniel Wehner (dawehner)",
                     "homepage": "https://www.drupal.org/u/dawehner",
                     "role": "Maintainer"
+                },
+                {
+                    "name": "joelpittet",
+                    "homepage": "https://www.drupal.org/user/160302"
                 },
                 {
                     "name": "merlinofchaos",
@@ -1890,17 +1898,17 @@
         },
         {
             "name": "drupal/paragraphs",
-            "version": "1.3.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/paragraphs",
-                "reference": "8.x-1.3"
+                "reference": "8.x-1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "24c6d2153127f9d783a03c05baf3b9beb219113f"
+                "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.5.zip",
+                "reference": "8.x-1.5",
+                "shasum": "85ba97dd1c602d33fc5904b6e1df5973312afa94"
             },
             "require": {
                 "drupal/core": "~8",
@@ -1928,8 +1936,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1527502684",
+                    "version": "8.x-1.5",
+                    "datestamp": "1541009695",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2175,12 +2183,16 @@
                 },
                 "drupal": {
                     "version": "8.x-1.2",
-                    "datestamp": "1440572939"
+                    "datestamp": "1440572939",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -2218,12 +2230,16 @@
                 },
                 "drupal": {
                     "version": "8.x-1.0-beta3",
-                    "datestamp": "1459452539"
+                    "datestamp": "1459452539",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
@@ -2237,6 +2253,10 @@
                 {
                     "name": "pferlito",
                     "homepage": "https://www.drupal.org/user/511172"
+                },
+                {
+                    "name": "zvse",
+                    "homepage": "https://www.drupal.org/user/2870933"
                 }
             ],
             "description": "Defines a YouTube video and thumbnail field type.",
