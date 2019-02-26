@@ -1,10 +1,20 @@
 # CHANGELOG
 
+## 1.1.4
+
+* Updated to drupal 8.6.10.
+* Added system_status.
+
+## 1.1.3
+
+* Updated to drupal 8.6.3.
+
 ## 1.1.2
 
 * Updated to drupal 8.6.2.
 
 ## 1.1.1
+
 - SERV-205: Updated drupal core to 8.5.6
 
 ## v1.0.9
