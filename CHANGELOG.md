@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.5
+
+* Updated to drupal 8.6.13.
+
 ## 1.1.4
 
 * Updated to drupal 8.6.10.
